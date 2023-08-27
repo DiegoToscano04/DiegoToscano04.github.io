@@ -143,6 +143,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
+  margin-bottom: 3rem;
 }
 @media (min-width: 1200px) {
   h3, .h3 {
@@ -171,7 +172,10 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+social-logo{
 
+
+}
 abbr[title] {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
@@ -11075,7 +11079,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/uis3.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11118,21 +11122,25 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
+  padding-top: 5rem;
   background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
 }
 
+.ceiling {
+  margin-top: 3.3rem;
+}
 .projects-section {
-  padding: 10rem 0;
+  padding: 5rem 0;
 }
 .projects-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
   .projects-section .featured-text {
+    
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
@@ -11147,9 +11155,47 @@ body {
   }
 }
 
+.about-section {
+  padding-top: 5rem;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+}
+.about-section p {
+  margin-bottom: 5rem;
+}
+.tFinal-section {
+  padding: 5rem 0;
+}
+.tFinal-section .featured-text {
+  padding: 2rem;
+}
+@media (min-width: 992px) {
+  .tFinal-section .featured-text {
+    
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid #64a19d;
+  }
+}
+.tFinal-section .tFinal-text {
+  padding: 3rem;
+  font-size: 90%;
+}
+@media (min-width: 992px) {
+  .tFinal-section .tFinal-text {
+    padding: 5rem;
+  }
+}
+.tFinal-section {
+  padding-top: 5rem;
+  background: linear-gradient(to bottom, #fff 5%, rgba(0, 0, 0, 0.5) 75%, #000 100%)
+  
+}
+.tFinal-section  p {
+  margin-bottom: 5rem;
+}
+
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/fondo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11185,6 +11231,10 @@ body {
   border-width: 0.25rem;
   width: 3rem;
 }
+.social-logo{
+  font-size: 2em;
+}
+
 .contact-section .social {
   margin-top: 5rem;
 }
@@ -11201,7 +11251,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 .contact-section .social a:active {
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer {
