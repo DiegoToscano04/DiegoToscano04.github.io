@@ -8238,6 +8238,8 @@ textarea.form-control-lg {
 .text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  font-size: 13px;
+  
 }
 
 .text-body {
@@ -8258,6 +8260,7 @@ textarea.form-control-lg {
 .text-white-50 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 13px;
 }
 
 .text-reset {
