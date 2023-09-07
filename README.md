@@ -1,7 +1,7 @@
-<p align="center">  Elaboración Proyecto 1 
-Lógica Booleana</p>
+<p align="center">  Elaboración Proyecto 1 Lógica Booleana</p>
 
-------------
+<h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
+
 
 <p align="center">  WEB GRUPO ALPHA:
 https://diegotoscano04.github.io/  </p>
