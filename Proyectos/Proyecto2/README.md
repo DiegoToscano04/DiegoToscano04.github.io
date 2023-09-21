@@ -42,7 +42,7 @@ https://diegotoscano04.github.io/  </p>
 
 ### Objetivo
 
-##### Construir las siguientes compuertas:
+##### Construir los siguientes chips:
 ###### HalfAdder
 ###### FullAdder
 ###### Add16
@@ -69,7 +69,7 @@ https://diegotoscano04.github.io/  </p>
     And(a=a,b=b,out=carry);
     }
 --------------
-<h3 align="center">Compuerta FullAdder</h3>
+<h3 align="center">FullAdder</h3>
 
 ##### Como en el caso del half-adder, el full-adder produce dos salidas, el bit menos significativo de la suma y el bit de acarreo. La memoria sumadora representa números enteros mediante patrones de n-bits, los cuales pueden ser 16,32 ,64, etc. 
 
@@ -94,7 +94,7 @@ https://diegotoscano04.github.io/  </p>
     }
 
 -----------------
-<h3 align="center">Compuerta Add16</h3>
+<h3 align="center">Add16</h3>
 
 #####  para lograr un sumador de 16 bits, se puede conectar los sumadores en serie, de forma que desde el bit menos significativo hacia el más significativo, el acarreo de entrada del bit esté conectado al acarreo de salida del bit.
 
@@ -129,7 +129,7 @@ https://youtu.be/81SrA0qSA98</p>
     }
         
 -----------------
-<h3 align="center">Compuerta Inc16</h3>
+<h3 align="center">Inc16</h3>
 
 ##### El chip inc16 es un tipo especial de sumador el cual se encarga de incrementar una entrada de 16 bits en 1 y utilizando el chip Add16 implementado anteriormente es posible construir el inc16.
 
@@ -146,25 +146,33 @@ https://youtu.be/81SrA0qSA98</p>
 
 -----------------
 <h3 align="center">ALU (ARITHMETIC LOGIC UNIT)</h3>
-<p align="center"><img src="" width="350" height="450"/></p>
-<p align="center">fuente: </p>
 
-##### La ALU..
+##### Es la parte fundamental de la GPU de la computadora, siendo capaz de realizar operaciones lógicas y aritméticas dependiendo de las entradas que se le den, de igual forma, es capaz de realizar operaciones para confirmar si un numero es negativo o igual a cero (zr y ng respectivamente).
 
-    CHIP ALU {
-    IN  
-        x[16], y[16],  // 16-bit inputs        
-        zx, // zero the x input?
-        nx, // negate the x input?
-        zy, // zero the y input?
-        ny, // negate the y input?
-        f,  // compute out = x + y (if 1) or x & y (if 0)
-        no; // negate the out output?
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ee03edd1-3f17-4013-9cdf-f2a9acc866ad" width="250" height="200"/></p>
+<p align="center">Fuente: Fuente: Chapter 2 NandtoTetris</p>
 
-    OUT 
-        out[16], // 16-bit output
-        zr, // 1 if (out == 0), 0 otherwise
-        ng; // 1 if (out < 0),  0 otherwise
+##### Como se puede apreciar en la figura, las entradas a la ALU son 8 en total, sus salidas son 3, de las cuales f(x,y), es la operación realizada a partir de la secuencia ingresada.
+##### Ahora bien, es importante señalar que la implementación de nuestra ALU cuenta con la reutilización de compuertas creadas en este y en el proyecto antecesor.
+##### De igual manera, es de destacar la tabla de verdad de la ALU, donde la secuencia de entrada, que va de zx…no, son las instrucciones de funcionamiento de la unidad, en donde cada una, tiene un papel especifico, como se ve en el encabezado de cada columna de la tabla, y por consiguiente, la salida, se obtiene una expresión por tal cadena.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e0fcf1a7-f657-4391-b99a-62f7d3314ad2" width="250" height="200"/></p>
+<p align="center">Fuente: Chapter 2 NandtoTetris</p>
+
+     CHIP ALU {
+     IN  
+     x[16], y[16],  // 16-bit inputs        
+     zx, // zero the x input?
+     nx, // negate the x input?
+     zy, // zero the y input?
+     ny, // negate the y input?
+     f,  // compute out = x + y (if 1) or x & y (if 0)
+     no; // negate the out output?
+     
+     OUT 
+     out[16], // 16-bit output
+     zr, // 1 if (out == 0), 0 otherwise
+     ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:    
     Mux16(a=x,b[0..15]=false,sel=zx,out=aux);    
@@ -188,4 +196,12 @@ https://youtu.be/81SrA0qSA98</p>
     And16(a=out3,b[0..15]=true,out=out);    	
     }
 
+   ##### Aquí tenemos un ejemplo del funcionamiento de nuestra ALU, en la parte izquierda, contamos con la secuencia de variables necesarias para la operación que se desea realizar y en la parte derecha nuestras salidas, de tal manera, queda comprobada la tabla de verdad, y los indicadores de salida de nuestro chip.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f1be1d74-2eb4-4fa7-8c9a-28af6230b38b" width="250" height="200"/></p>
+<p align="center">Fuente: Fuente: Propiedad de los autores</p>
+
+### Principales diferencias entre la lógica aritmética y la lógica secuencial.
+
+##### Las principales diferencias, se encuentran en la naturaleza de cada ítem, por ejemplo, la lógica aritmética está más encargada de realizar alguna operación sin determinar la secuencialidad de la misma, solo depende de las entradas que tome para funcionar, por otro lado, la lógica secuencial, sí se ve afectada por el orden de los datos, realizando operaciones de almacenamiento y de flujo de operaciones, por otro lado, los datos usados por la lógica secuencial, son una combinatoria de datos numéricos, datos lógicos y señales de control. Por otro lado, la función de retroalimentación de la salida de cada lógica es exclusiva en este caso de la lógica secuencial dado que su arquitectura tiene la capacidad de almacenar estados anteriores que influyen en las entradas futuras. Dicho esto, se debe tener en cuenta el fin que tiene cada lógica, haciendo a la aritmética más enfocada en los sistemas que requieran cálculos de tipo numérico y en contraste, a la secuencial en sistemas de control, maquinas o en general cosas que requieran almacenar y retener estados anteriores.
   -----------------
