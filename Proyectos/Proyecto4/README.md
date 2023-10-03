@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 3 Lógica Secuencial</p>
+<p align="center">  Elaboración Proyecto 3 Machine Language</p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -23,55 +23,181 @@ https://diegotoscano04.github.io/  </p>
 ###### En la carpeta `projects` estarán los proyectos del 1 al 13 los cuales son archivos que deben modificarse para completar las prácticas mientras se trabaja en varios proyectos de nand2tetris.
 ###### En la carpeta `tools` estarán las herramientas del software nand2tetris.
 
-## Uso del Hardware Simulator 2.5
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ebe3caf7-7622-4420-8b3b-120ec046a87e" width="500" height="300" /></p>
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f3fbf4f2-1dcb-483f-a408-c2b43c77ea67" /></p>
+## Uso del programa Assembler 
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/72f725df-6dcf-4c43-a30e-e663c3258e0d" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/55cdd5ce-dbdd-4ba1-a5f3-e75040635ca5" width="500" height="300" /></p>
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f3fbf4f2-1dcb-483f-a408-c2b43c77ea67" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4646403e-b677-45d1-9083-6aca9836d41c" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/673b1925-adb1-4637-9107-0888487ac3a2" width="500" height="300" /></p>
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f3fbf4f2-1dcb-483f-a408-c2b43c77ea67" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/6bfba127-0ef7-4b41-966e-a03ee7f81ea1" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
 
-##### En la parte final de cada evaluación para cada una de las compuertas podemos corroborar con un mensaje de :`Comparison ended successfuly` si realizamos la actividad de manera satisfactoria.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d64ca4d6-a5d8-46fe-9fb2-18695c2d61e1" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
 
-### Desarrollo Proyecto 3:
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d433992f-1eb1-4ab1-b95b-65fae4dd71bf" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
 
-##### La memoria principal del ordenador, también llamada memoria de acceso aleatorio, o RAM, es una secuencia direccionable de registros, cada uno diseñado para contener un valor de n bits. En este proyecto se construirá gradualmente una unidad RAM. Esto implica dos cuestiones principales: (i) utilizar la lógica de compuertas para almacenar bits de forma persistente, a lo largo del tiempo, y (ii) utilizar la lógica de compuertas para localizar ("direccionar") el registro de memoria sobre el que deseamos operar.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bece867e-716c-48a8-97df-4d7a481a05d8" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+
+## Uso del programa CPUEmulator
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/831c8911-a1a7-4444-b732-23f1aa21c92a" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bdd10740-561f-406c-9963-b4765df24ac8" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/37bb2a75-791c-4cd3-8ec4-e56d0201e0d1" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/11ee677d-e27b-4da1-b2aa-6d2e3442331f" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/27cd3171-ab6b-4e57-9050-d429f5ae0a71" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+
+##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`Comparison ended successfuly` si realizamos la actividad de manera satisfactoria para continuar con los pasos recomendados.
+
+### Desarrollo Proyecto 4:
+
+##### En este proyecto escribiremos y ejecutaremos programas de máquina de bajo nivel, se escribirán programas en el lenguaje de Hack assembly y se hará uso de de un ensamblador para traducirlos a código binario y probar el código resultante el cual estára en binario.
+
+##### Se ejecutará el proyecto en un emulador de CPU, diseñado para ejecutar código binario escrito en en Hack assembly.
 
 
-## Objetivo
+## Objetivos Generales
 
-#### Construir los siguientes chips:
-##### DFF (given)
-##### Bit
-##### Register
-##### RAM8
-##### RAM64
-##### RAM512
-##### RAM4K
-##### RAM16K
-##### PC
+- Obtener una práctica de programación de bajo nivel en lenguaje de máquina.
+- Familiarizarse con el conjunto de intrucciones Hack antes de construir el ordenador Hack en el proyecto 5.
+- Conocer el proceso de ensamblado antes de construir el ensamblador en el proyecto 6.
 ------------
 
-<h3 align="center">DFF (given)</h3>
+## Objetivos Específicos
 
-##### El DFF o Data flip-flop e una variante del elemento secuencial más elemental del ordenador, el flip-flop. Un DFF posee una interfaz que tiene dos entradas de datos de un bit y una salida de datos de un bit, también posee una entra da reloj que cambia según la señal del reloj maestro.
+- Escribir y testear los programas `Mult.asm` y `Fill.asm`.
+- Usar editor de texto plano para realizar los programas y luego pasarlos por el programa Assambler y CPUEmulator.
+-----------
 
-##### Es decir que las entradas de datos y las entradas de reloj en conjunto permiten a un DFF implementar el comportamiento llamado: comportamiento out(t)=in(t-1) donde in y out son los valores de entrada y salida de la compuerta y t es el ciclo del reloj actual. En resumen, el DFF emite el valor de entrada de la unidad de tiempo anterior.
+## Pasos a seguir: 
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e7ea697a-831d-48e9-8150-9931ec89ab2d" /></p>
-<p align="center"> Fuente: https://www.nand2tetris.org/_files/ugd/44046b_862828b3a3464a809cda6f44d9ad2ec9.pdf</p>
+0. Entrar a la carpeta de su PC donde se encuentre el archivo Xxx.asm. Inicie el ensamblador y el CPUEmulator desde la carpeta actual.
+1. Use un editor de texto plano para editar el archivo Xxx.asm y guarde la nueva versión en su carpeta actual.
+2. Utilice el ensamblador para traducir el archivo Xxx.asm. Si hay errores devovlerse al paso 1.
+3. Guarde el archivo Xxx.hack resultante en la carpeta actual.
+4. Cargue el archivo Xxx.hack en el emulador de CPU, ejecute el programa e inspeccione los valores que recibe mientras ejecuta, si tiene errorres devovlerse al paso 1.
+5. Cargue el archivo Xxx.tst suministrado en el emulador de CPU y ejecútelo, si hay errores devolverse al paso 1.
+-----------------------
+<h3 align="center">Mult.asm</h3>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/6074bcc0-8abf-432f-bf34-193e07264d15" /></p>
-<p align="center"> Fuente:https://www.nand2tetris.org/_files/ugd/44046b_862828b3a3464a809cda6f44d9ad2ec9.pdf</p>
+##### Antes de poder ejecutarse, un programa simbólico debe traducirse a instrucciones que el ordenador pueda decodificar y ejecutar.
 
+#### Hack instructions
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/be76646a-f832-4bab-a8c6-e53a121e1e0a" width="500" height="300" /></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
+
+##### El programa puede utilizar variables simbólicas según sea necesario, existe un agente que sabe cómo vincular los simbolos a las direcciones RAM sensibles, dicho agente es el ensamblador.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d3be8390-341b-4983-9c92-ad43c46acefc" width="350" height="200" /></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/1cbe0bb8-5843-40eb-9b75-e67ba734804a" width="300" height="350" /></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
+
+#### Cógido Mult.asm
+```
+// Multiplies R0 and R1 and stores the result in R2.
+// (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
+//
+// This program only needs to handle arguments that satisfy
+// R0 >= 0, R1 >= 0, and R0*R1 < 32768.
+
+@R2
+M=0
+
+@R0
+D=M
+@DEFAULT
+D;JEQ
+
+@R1
+D=M
+@DEFAULT
+D;JEQ
+
+(LOOP)
+@R0
+D=M
+@R2
+M=M+D
+@R1
+M=M-1
+
+@R1
+D=M
+
+@LOOP
+D;JGT
+
+@END
+D;JEQ 
+
+(DEFAULT)
+@R2
+M=0
+@END
+0;JMP
+
+(END)
+@END
+0;JMP
+
+```
+#### Procesamiento basado en punteros
+
+##### En Hack, el acceso basado en punteros se realiza ajustando el registro de dirección a la dirección que queremos acceder.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8bba477e-f5e9-4f12-b537-3c10c85a9566" width="300" height="350" /></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
+
+
+#### Traductor (Ensamblador)
+##### El ensamblador sustituye todos los símbolos por direcciones físicas y genera instrucciones binarias.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad1a9b0e-d76f-47ba-9c3e-bdcfcf1082df" width="300" height="350" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+##### Una vez pasado por el ensamblador extraemos el archivo punto hack que nos arroja.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0089c929-88dc-46ad-9e60-8f92971b6f2c" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
 
 -----------------
 
+##### Ahora usamos el programa CPUEmulator para corroborar si el codigo que hicimos y convertimos en el archivo punto hack funciona correctamente.
 <h3 align="center">Bit</h3>
 
-##### El bit o celda binaria está diseñado para almacenar un solo bit de información, es decir 0 o 1- La interfaz del chip consta de un pin de entrada que transporta un bit de datos. Posee un bit, un pin de carga que habilita la celda para escrituras y un pin de salida que emite el estado actual de la celda. 
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/53274084-5f0d-4447-a3e0-765953dd6a37" width="300" height="350" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+##### Observamos que pasó la prueba del archivo `Mult.tst` con el mensaje `Comparison ended successfully`.
+
+
+<h3 align="center">Mult.asm</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4a9073e9-7c6f-4f0f-88af-639db5910a9d"/></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_862828b3a3464a809cda6f44d9ad2ec9.pdf </p>
