@@ -177,22 +177,24 @@ https://diegotoscano04.github.io/  </p>
 -	##### Los ocho registros se implementan utilizando el componente RAM8.
 -	##### El multiplexor de 8 vías y 16 bits (Mux8Way16) se utiliza para seleccionar uno de los ocho registros seleccionados por el multiplexor de 8 vías, en función de las líneas de dirección [3 a 5].
 
-   CHIP RAM64 {
-    IN in[16], load, address[6];
-    OUT out[16];
 
-    PARTS:
-    DMux8Way(in=load,sel=address[3..5],a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h);
-    RAM8(in=in,load=a,address=address[0..2],out=RAM81);
-    RAM8(in=in,load=b,address=address[0..2],out=RAM82);
-    RAM8(in=in,load=c,address=address[0..2],out=RAM83);
-    RAM8(in=in,load=d,address=address[0..2],out=RAM84);
-    RAM8(in=in,load=e,address=address[0..2],out=RAM85);
-    RAM8(in=in,load=f,address=address[0..2],out=RAM86);
-    RAM8(in=in,load=g,address=address[0..2],out=RAM87);
-    RAM8(in=in,load=h,address=address[0..2],out=RAM88);
-    Mux8Way16(a=RAM81,b=RAM82,c=RAM83,d=RAM84,e=RAM85,f=RAM86,g=RAM87,h=RAM88,sel=address[3..5],out=out);
-}
+
+ 	    CHIP RAM64 {
+        IN in[16], load, address[6];
+        OUT out[16];
+
+        PARTS:
+        DMux8Way(in=load,sel=address[3..5],a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h);
+        RAM8(in=in,load=a,address=address[0..2],out=RAM81);
+        RAM8(in=in,load=b,address=address[0..2],out=RAM82);
+        RAM8(in=in,load=c,address=address[0..2],out=RAM83);
+        RAM8(in=in,load=d,address=address[0..2],out=RAM84);
+        RAM8(in=in,load=e,address=address[0..2],out=RAM85);
+        RAM8(in=in,load=f,address=address[0..2],out=RAM86);
+        RAM8(in=in,load=g,address=address[0..2],out=RAM87);
+        RAM8(in=in,load=h,address=address[0..2],out=RAM88);
+        Mux8Way16(a=RAM81,b=RAM82,c=RAM83,d=RAM84,e=RAM85,f=RAM86,g=RAM87,h=RAM88,sel=address[3..5],out=out);
+        }
 
   -----------------
 
