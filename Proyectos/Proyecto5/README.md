@@ -78,7 +78,7 @@ https://diegotoscano04.github.io/  </p>
 
 ##### Resultados obtenidos:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/64a9a6fa-dd92-43dc-8b77-a26cb5ccf503"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/64a9a6fa-dd92-43dc-8b77-a26cb5ccf503" width="500" height="350"/></p>
 <p align="center"> Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf</p>
 
 ----------------
@@ -94,7 +94,7 @@ https://diegotoscano04.github.io/  </p>
 
 ###### Registros: Los registros son pequeñas unidades de almacenamiento de alta velocidad dentro de la CPU. Se utilizan para almacenar datos temporales y resultados intermedios durante el procesamiento de instrucciones.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/898a8287-aeaa-4ed1-a6dd-d084a4571c98"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/898a8287-aeaa-4ed1-a6dd-d084a4571c98" /></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
 ##### Implementación del código:
@@ -146,10 +146,10 @@ https://diegotoscano04.github.io/  </p>
 ##### Resultados obtenidos:
 
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/669cc3f0-abfe-408c-9368-61e0e91faabc"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/669cc3f0-abfe-408c-9368-61e0e91faabc" width="500" height="350"/></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/7439642c-80cd-457e-a5cc-fa2ffb2da639"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/7439642c-80cd-457e-a5cc-fa2ffb2da639" width="500" height="350"/></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
 
@@ -159,7 +159,7 @@ https://diegotoscano04.github.io/  </p>
 
 ##### Es Una máquina de 16 bits que consta de los siguientes elementos:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/89c00b67-c407-4750-8d6d-6d9902fe336d"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/89c00b67-c407-4750-8d6d-6d9902fe336d" width="500" height="350"/></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
 ##### Ambos chips de memoria tienen una anchura de 16 bits y un espacio de direcciones de 15 bits.
@@ -180,7 +180,7 @@ https://diegotoscano04.github.io/  </p>
 
 ##### Resultados obtenidos:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/34761f01-3be7-4666-b8f4-1dd0b480e070"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/34761f01-3be7-4666-b8f4-1dd0b480e070" width="500" height="350"/></p>
 <p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
 
