@@ -273,7 +273,16 @@ D=A-D
 @WHITE
 D;JGT
 
+@BLACKID
+M=0
 
+@LOOP
+D;JEQ
+
+```
+El ordenador Hack es una plataforma von Neumann. Es una máquina de 16 bits, que consiste una CPU, dos módulos de memoria separados que sirven como memoria de y dos dispositivos de E/S asignados a memoria: una pantalla y un teclado.
+
+El programador Hack es consciente de la existencia de dos espacios de direcciones distintos: una memoria de instrucciones y una memoria de datos. Ambas memorias son de 16 bits de ancho y tienen un espacio de direcciones de 15 bits, lo que significa que el tamaño máximo direccionable de cada memoria es de 32K palabras de 16 bits. 
 
 ##### Ahora procedemos a colocar el archivo Fill.asm en el ensamblador para convertirlo a binario y corroboramos si quedó correctamente.
 
