@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 2 Aritmética Booleana</p>
+<p align="center">  Elaboración Proyecto 5 Computer Architecture</p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -35,173 +35,153 @@ https://diegotoscano04.github.io/  </p>
 
 ##### En la parte final de cada evaluación para cada una de las compuertas podemos corroborar con un mensaje de :`Comparison ended successfuly` si realizamos la actividad de manera satisfactoria.
 
-### Desarrollo Proyecto 2:
+### Desarrollo Proyecto 5:
 
-###### La pieza central de la arquitectura del ordenador es la CPU, o Unidad Central de Procesamiento, y la pieza central computacional de la CPU es la ALU, o Unidad Aritmético-Lógica. En este proyecto el propósito es construir gradualmente un conjunto de chips que realizan sumas aritméticas, culminando con la construcción de una ALU: el chip ALU del ordenador Hack. Todos los chips construidos en este proyecto van a ser estandares, excepto la ALU, que varía de una arquitectura de ordenador a otra.
+###### En este proyecto se integrarán los dispositivos ALU y RAM construidos en los proyectos 2 y 3 en un sistema informático capaz de ejecutar programas escritos en el lenguaje máquina introducido en el proyecto 4. El propósito es construir una plataforma hardware capaz de ejecutar programas escritos en el lenguaje máquina Hack y a su vez demuostrar el funcionamiento de la plataforma haciendo que el Chip ejecute correctamente los tres programas de prueba.
 
 
 ### Objetivo
 
 ##### Construir los siguientes chips:
-###### HalfAdder
-###### FullAdder
-###### Add16
-###### Inc16
-###### ALU
+###### Memory
+###### CPU
+###### Computer
+
 ------------
 
-<h3 align="center">HalfAdder</h3>
+<h3 align="center">Memory</h3>
 
-###### Esta compuerta es un circuito lógico combinacional diseñado para sumar dos dígitos binarios. Este, proporciona una salida junto con un acarreo(si lo hay). Para su diseño, se  hace uso de una puerta Xor, la cual nos proporciona como salida la suma y una puerta And para la salida del Acarreo.
+###### La memoria en una computadora es un componente crucial que sirve para almacenar datos e instrucciones temporales o permanentes. Los diferentes tipos de memoria, como la RAM, la ROM y la memoria de almacenamiento secundario, desempeñan roles específicos en el funcionamiento de la computadora, asegurando un rendimiento eficiente y la capacidad de almacenar información de manera confiable. Este chip memory, está compuesto esencialmente de una fusión de otros tres chips de niveles inferiores: RAM16K, pantalla, teclado. Aunque estos están ya incorporados por lo que no hay necesidad de construirlos. Además también cuenta con las compuertas: DMux4Way, Mux4Way16 y or.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8460345f-aef7-40e8-9d67-fa8ce555c7d5" /></p>
-<p align="center"> Fuente:  https://www.geeksforgeeks.org/half-adder-in-digital-logic/</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b77825c7-3bfc-4943-a895-cbd09060322d" /></p>
+<p align="center"> Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf/</p>
 
+##### Implementación del código:
 -----------------
-
-    CHIP HalfAdder {
-    IN a, b;    // 1-bit inputs
-    OUT sum,    // Right bit of a + b 
-        carry;  // Left bit of a + b
+  
+    CHIP Memory {
+    IN in[16], load, address[15];
+    OUT out[16];
 
     PARTS:
-    Xor(a=a,b=b,out=sum);
-    And(a=a,b=b,out=carry);
+    DMux4Way(in=true, sel=address[13..14], a=a,b=b,c=c,d=d);
+    Or(a=a,b=b,out=ram);
+    And(a=load,b=ram, out=loadram);
+    RAM16K(in=in, load=loadram, address=address[0..13], out=out1);
+    And(a=c,b=load,out=loadscreen);
+    Screen(in=in, load=loadscreen, address=address[0..12], out=out2);
+    Keyboard(out=keyboard);
+    Mux4Way16(a=out1,b=out1,c=out2,d=keyboard,sel=address[13..14], out=out);
     }
+
 --------------
-<h3 align="center">FullAdder</h3>
 
-##### Como en el caso del half-adder, el full-adder produce dos salidas, el bit menos significativo de la suma y el bit de acarreo. La memoria sumadora representa números enteros mediante patrones de n-bits, los cuales pueden ser 16,32 ,64, etc. 
+##### Resultados obtenidos:
 
-##### El chip que se encarga de sumar dichos números se denomina sumador multibit o únicamente sumador.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/64a9a6fa-dd92-43dc-8b77-a26cb5ccf503"/></p>
+<p align="center"> Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d21b5dcf-2dd7-476c-8d59-94302ff6c3f2"/></p>
-<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf </p>
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/c89a55b8-2f79-4984-8607-d772ef76025d"/></p>
-<p align="center">Fuente: https://angelmicelti.github.io/4ESO/EDI/sumador_completo.html</p>
+----------------
 
 
-    CHIP FullAdder {
-    IN a, b, c;  // 1-bit inputs
-    OUT sum,     // Right bit of a + b + c
-        carry;   // Left bit of a + b + c
+<h3 align="center">CPU (Central Processing Unit)</h3>
+
+###### La CPU es el cerebro de una computadora, un componente microelectrónico que realiza una variedad de operaciones aritméticas, lógicas y de control que ejecuta instrucciones escritas en el lenguaje HACK.. Las tareas típicas que realiza una CPU incluyen la carga de datos desde la memoria principal, la realización de cálculos, la toma de decisiones lógicas y la devolución de resultados. La CPU está compuesta por varias unidades y componentes clave:
+
+###### Unidad de Control (CU): La CU es responsable de controlar y coordinar las operaciones de la CPU. Supervisa la secuencia de ejecución de instrucciones y garantiza que se realicen en el orden correcto. También interpreta y decodifica las instrucciones antes de ejecutarlas.
+
+###### Unidad Aritmético Lógica (ALU): La ALU es la parte de la CPU que realiza operaciones aritméticas (como sumas y restas) y operaciones lógicas (como comparaciones). Es fundamental para la realización de cálculos y toma de decisiones.
+
+###### Registros: Los registros son pequeñas unidades de almacenamiento de alta velocidad dentro de la CPU. Se utilizan para almacenar datos temporales y resultados intermedios durante el procesamiento de instrucciones.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/898a8287-aeaa-4ed1-a6dd-d084a4571c98"/></p>
+<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
+
+##### Implementación del código:
+
+-----------------------
+
+    CHIP CPU {
+
+    IN  inM[16],         // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset==1) or continue executing
+                         // the current program (reset==0).
+
+    OUT outM[16],        // M value output
+        writeM,          // Write to M? 
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instruction
 
     PARTS:
-    HalfAdder(a=a,b=b,carry=carry1,sum=out1);
-    HalfAdder(a=out1,b=c,carry=carry2,sum=sum);
-    Or(a=carry1,b=carry2,out=carry);		
+    Not(in=instruction[15],out=opbit);
+    Mux16(a=instruction,b=OutALU,sel=instruction[15],out=out1);
+    Or(a=opbit,b=instruction[5],out=out2);
+    ARegister(in=out1,load=out2,out=Aregister);
+    And(a=instruction[15],b=instruction[4],out=out3);
+    DRegister(in=OutALU,load=out3,out=Dregister);
+    And(a=instruction[15],b=instruction[3],out=writeM);    
+    And(a=instruction[15],b=instruction[12],out=out4);
+    Mux16(a=Aregister,b=inM,sel=out4,out=out5);
+    And16(a=Aregister,b=true,out[0..14]=addressM);
+    ALU(x=Dregister,y=out5,zx=instruction[11],nx=instruction[10],zy=instruction[9],ny=instruction[8],f=instruction[7],no=instruction[6],out=outM, out=OutALU, zr=zr,ng=ng);
+    
+    Not(in=zr,out=notzr);
+    Not(in=ng,out=notng);
+    And(a=zr,b=instruction[1],out=aux);
+    And(a=ng,b=instruction[2],out=aux2);
+    And(a=notzr,b=notng,out=aux3);
+    And(a=aux3,b=instruction[0],out=aux4);
+    Or(a=aux,b=aux2,out=aux5);
+    Or(a=aux5,b=aux4,out=aux6);
+    And(a=instruction[15],b=aux6,out=jump);
+    Not(in=jump,out=notjump);
+    
+    PC(in=Aregister,load=jump,inc=notjump,reset=reset,out[0..14]=pc);
     }
 
 -----------------
-<h3 align="center">Add16</h3>
 
-#####  para lograr un sumador de 16 bits, se puede conectar los sumadores en serie, de forma que desde el bit menos significativo hacia el más significativo, el acarreo de entrada del bit esté conectado al acarreo de salida del bit.
-
-##### El primer bit se puede construir con un semisumador mientras que los demás bits requieren un sumador completo, se tiene un semi sumador de N bits. Pero si en el primer bit se utiliza un sumador completo, el circuito dispone además del acarreo de entrada Ci y se tiene un sumador completo de N bits.
+##### Resultados obtenidos:
 
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e9393d28-4247-4b47-922d-dc64035f7dc7"/></p>
-<p align="center">fuente: http://codigoelectronica.com/blog/compuerta-or](https://www.studocu.com/es-mx/document/universidad-panamericana-mexico/sistemas-de-informacion/sumador-16-bits-nota-a/9517248
-https://youtu.be/81SrA0qSA98</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/669cc3f0-abfe-408c-9368-61e0e91faabc"/></p>
+<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
-    CHIP Add16 {
-    IN a[16], b[16];
-    OUT out[16];
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/7439642c-80cd-457e-a5cc-fa2ffb2da639"/></p>
+<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
-    PARTS:
-    HalfAdder(a=a[0],b=b[0],carry=carry1,sum=out[0]);
-    FullAdder(a=a[1],b=b[1],c=carry1,carry=carry2,sum=out[1]);
-    FullAdder(a=a[2],b=b[2],c=carry2,carry=carry3,sum=out[2]);
-    FullAdder(a=a[3],b=b[3],c=carry3,carry=carry4,sum=out[3]);
-    FullAdder(a=a[4],b=b[4],c=carry4,carry=carry5,sum=out[4]);
-    FullAdder(a=a[5],b=b[5],c=carry5,carry=carry6,sum=out[5]);
-    FullAdder(a=a[6],b=b[6],c=carry6,carry=carry7,sum=out[6]);
-    FullAdder(a=a[7],b=b[7],c=carry7,carry=carry8,sum=out[7]);
-    FullAdder(a=a[8],b=b[8],c=carry8,carry=carry9,sum=out[8]);
-    FullAdder(a=a[9],b=b[9],c=carry9,carry=carry10,sum=out[9]);
-    FullAdder(a=a[10],b=b[10],c=carry10,carry=carry11,sum=out[10]);
-    FullAdder(a=a[11],b=b[11],c=carry11,carry=carry12,sum=out[11]);
-    FullAdder(a=a[12],b=b[12],c=carry12,carry=carry13,sum=out[12]);
-    FullAdder(a=a[13],b=b[13],c=carry13,carry=carry14,sum=out[13]);
-    FullAdder(a=a[14],b=b[14],c=carry14,carry=carry15,sum=out[14]);
-    FullAdder(a=a[15],b=b[15],c=carry15,carry=carry16,sum=out[15]);
-    }
-        
------------------
-<h3 align="center">Inc16</h3>
-
-##### El chip inc16 es un tipo especial de sumador el cual se encarga de incrementar una entrada de 16 bits en 1 y utilizando el chip Add16 implementado anteriormente es posible construir el inc16.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4fc8ed2c-eecd-4e03-a44e-56e959f738ad" width="250" height="200"/></p>
-<p align="center">Fuente: https://gittest2121.gitbook.io/nand2tetris/combinational-chips/inc16-chip</p>
-
-    CHIP Inc16 {
-    IN in[16];
-    OUT out[16];
-
-    PARTS:
-    Add16(a=in,b[0]=true,out=out);
-    }
 
 -----------------
-<h3 align="center">ALU (ARITHMETIC LOGIC UNIT)</h3>
 
-##### Es la parte fundamental de la GPU de la computadora, siendo capaz de realizar operaciones lógicas y aritméticas dependiendo de las entradas que se le den, de igual forma, es capaz de realizar operaciones para confirmar si un numero es negativo o igual a cero (zr y ng respectivamente).
+<h3 align="center">Computer</h3>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ee03edd1-3f17-4013-9cdf-f2a9acc866ad" width="250" height="200"/></p>
-<p align="center">Fuente: Fuente: Chapter 2 NandtoTetris</p>
+##### Es Una máquina de 16 bits que consta de los siguientes elementos:
 
-##### Como se puede apreciar en la figura, las entradas a la ALU son 8 en total, sus salidas son 3, de las cuales f(x,y), es la operación realizada a partir de la secuencia ingresada.
-##### Ahora bien, es importante señalar que la implementación de nuestra ALU cuenta con la reutilización de compuertas creadas en este y en el proyecto antecesor.
-##### De igual manera, es de destacar la tabla de verdad de la ALU, donde la secuencia de entrada, que va de zx…no, son las instrucciones de funcionamiento de la unidad, en donde cada una, tiene un papel especifico, como se ve en el encabezado de cada columna de la tabla, y por consiguiente, la salida, se obtiene una expresión por tal cadena.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/89c00b67-c407-4750-8d6d-6d9902fe336d"/></p>
+<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e0fcf1a7-f657-4391-b99a-62f7d3314ad2" width="250" height="200"/></p>
-<p align="center">Fuente: Chapter 2 NandtoTetris</p>
+##### Ambos chips de memoria tienen una anchura de 16 bits y un espacio de direcciones de 15 bits.
+##### Una vez que la CPU y los chips de memoria se han implementado y probado, la construcción del ordenador en su conjunto es sencilla.
 
-     CHIP ALU {
-     IN  
-     x[16], y[16],  // 16-bit inputs        
-     zx, // zero the x input?
-     nx, // negate the x input?
-     zy, // zero the y input?
-     ny, // negate the y input?
-     f,  // compute out = x + y (if 1) or x & y (if 0)
-     no; // negate the out output?
-     
-     OUT 
-     out[16], // 16-bit output
-     zr, // 1 if (out == 0), 0 otherwise
-     ng; // 1 if (out < 0),  0 otherwise
+##### Implementación del código:
 
-    PARTS:    
-    Mux16(a=x,b[0..15]=false,sel=zx,out=aux);    
-    Not16(in=aux,out=notx);
-    Mux16(a=aux,b=notx,sel=nx,out=newx);
-    Mux16(a=y,b[0..15]=false,sel=zy,out=aux1);    
-    Not16(in=aux1,out=noty);
-    Mux16(a=aux1,b=noty,sel=ny,out=newy);
-    Add16(a=newx,b=newy,out=aux2);
-    And16(a=newx,b=newy,out=aux3);
-    Mux16(a=aux3,b=aux2,sel=f,out=out1);
-    Not16(in=out1,out=out2);
-    Mux16(a=out1,b=out2,sel=no,out=out3,out[0..7]=out4,out[8..15]=out5);
+------------
 
-    Or8Way(in=out4,out=out6);
-    Or8Way(in=out5,out=out7);
-    Or(a=out6,b=out7,out=out8);
-    Not(in=out8,out=zr);
-
-    And16(a=out3,b[0..15]=true,out[15]=ng);
-    And16(a=out3,b[0..15]=true,out=out);    	
+    CHIP Computer {
+    IN reset;
+    PARTS:  CPU(inM=outMemory,instruction=outROM32K,reset=reset,writeM=writeM,outM=outM,addressM=addressM,pc=pc);
+    ROM32K(address=pc,out=outROM32K);
+    Memory(load=writeM,in=outM,address=addressM,out=outMemory);    
     }
 
-   ##### Aquí tenemos un ejemplo del funcionamiento de nuestra ALU, en la parte izquierda, contamos con la secuencia de variables necesarias para la operación que se desea realizar y en la parte derecha nuestras salidas, de tal manera, queda comprobada la tabla de verdad, y los indicadores de salida de nuestro chip.
+----------------
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f1be1d74-2eb4-4fa7-8c9a-28af6230b38b" width="250" height="200"/></p>
-<p align="center">Fuente: Fuente: Propiedad de los autores</p>
+##### Resultados obtenidos:
 
-### Principales diferencias entre la lógica aritmética y la lógica secuencial.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/34761f01-3be7-4666-b8f4-1dd0b480e070"/></p>
+<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_b2cad2eea33847869b86c541683551a7.pdf </p>
 
-##### Las principales diferencias, se encuentran en la naturaleza de cada ítem, por ejemplo, la lógica aritmética está más encargada de realizar alguna operación sin determinar la secuencialidad de la misma, solo depende de las entradas que tome para funcionar, por otro lado, la lógica secuencial, sí se ve afectada por el orden de los datos, realizando operaciones de almacenamiento y de flujo de operaciones, por otro lado, los datos usados por la lógica secuencial, son una combinatoria de datos numéricos, datos lógicos y señales de control. Por otro lado, la función de retroalimentación de la salida de cada lógica es exclusiva en este caso de la lógica secuencial dado que su arquitectura tiene la capacidad de almacenar estados anteriores que influyen en las entradas futuras. Dicho esto, se debe tener en cuenta el fin que tiene cada lógica, haciendo a la aritmética más enfocada en los sistemas que requieran cálculos de tipo numérico y en contraste, a la secuencial en sistemas de control, maquinas o en general cosas que requieran almacenar y retener estados anteriores.
+
   -----------------
