@@ -316,6 +316,8 @@ El programador Hack es consciente de la existencia de dos espacios de direccione
 
 De acuerdo a toda la información aprendida enteriormente nos damos cuenta que la CPU sólo puede ejecutar programas que residan en la memoria de instrucciones, la cual solo sirve para lectura de los dispositivos, y los programas se cargan en ella utilizando algún medios exógenos. Por ejemplo, la memoria de instrucciones puede implementarse en un chip ROM que está pregrabado con el programa requerido. Para cargar un nuevo programa se realiza sustituyendo todo el chip ROM, de forma similar a la sustitución de un cartucho en una videoconsola. consola de juegos. Para simular esta operación, los simuladores de hardware de la plataforma Hack deben proporcionar un medio para cargar la memoria de instrucciones a partir de un archivo de texto que contenga un programa en lenguaje máquina como lo realizamos anteriormente.
 
-
+-------------------
+#### Pregunta
+¿Por qué el lenguaje de máquina es importante para definir la arquitectura computacional?
 
 
