@@ -120,255 +120,70 @@ Cuando se le da al ensamblador como argumento de línea de comandos un archivo P
 
 ### DEST:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d09d8cf0-e612-42e5-a62c-7fb4e60bea02"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/08ffc2db-bb59-45df-a242-e3c6748c3b96"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### JUMP:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/38445a72-84c0-41fd-ada8-38ac2221382c"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/5b96279b-abec-4858-a584-0b34f5431d8c"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 #### Construcción Parser:
 
-### VariableSpot:
+### variableSpot:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/76393980-eb28-4154-a8be-369e0b9edd75"/></p>
+<p align="center"><img src="!https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8d7e63cb-2beb-478e-bc76-d8ec304761d4"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### First pass: 
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a05413eb-3c7d-4706-b8fc-a5b251e7e6ce"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/da9496ee-dbe2-4f8b-a385-4bf2e787404f"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Second pass:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8812dcac-ff14-4665-bc71-67ff951a4743"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d6d4539e-6875-4774-82e7-1fb67f96da59"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-### 
+### strip:
 
-#### Hack instructions
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/be76646a-f832-4bab-a8c6-e53a121e1e0a" width="500" height="300" /></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
-
-##### El programa puede utilizar variables simbólicas según sea necesario, existe un agente que sabe cómo vincular los simbolos a las direcciones RAM sensibles, dicho agente es el ensamblador.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d3be8390-341b-4983-9c92-ad43c46acefc" width="350" height="200" /></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/1cbe0bb8-5843-40eb-9b75-e67ba734804a" width="300" height="350" /></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
-
-#### Cógido Mult.asm
-```
-// Multiplies R0 and R1 and stores the result in R2.
-// (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
-//
-// This program only needs to handle arguments that satisfy
-// R0 >= 0, R1 >= 0, and R0*R1 < 32768.
-
-@R2
-M=0
-
-@R0
-D=M
-@DEFAULT
-D;JEQ
-
-@R1
-D=M
-@DEFAULT
-D;JEQ
-
-(LOOP)
-@R0
-D=M
-@R2
-M=M+D
-@R1
-M=M-1
-
-@R1
-D=M
-
-@LOOP
-D;JGT
-
-@END
-D;JEQ 
-
-(DEFAULT)
-@R2
-M=0
-@END
-0;JMP
-
-(END)
-@END
-0;JMP
-
-```
-#### Procesamiento basado en punteros
-
-##### En Hack, el acceso basado en punteros se realiza ajustando el registro de dirección a la dirección que queremos acceder.
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8bba477e-f5e9-4f12-b537-3c10c85a9566" width="450" height="350" /></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1HxjPmIZkFHl-BVW3qoz8eD9dqEuEyuBI/view</p>
-
-
-#### Traductor (Ensamblador)
-##### El ensamblador sustituye todos los símbolos por direcciones físicas y genera instrucciones binarias.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad1a9b0e-d76f-47ba-9c3e-bdcfcf1082df" width="550" height="450" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/82c665c4-20b1-4e8d-aaef-b7bfa0a3052c"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-##### Una vez pasado por el ensamblador extraemos el archivo punto hack que nos arroja.
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0089c929-88dc-46ad-9e60-8f92971b6f2c" /></p>
+### fullFill
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/dd39382a-d018-48f7-9f3a-7175018f838e"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
------------------
+### Documentos a evaluar:
 
-##### Ahora usamos el programa CPUEmulator para corroborar si el codigo que hicimos y convertimos en el archivo punto hack funciona correctamente.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/53274084-5f0d-4447-a3e0-765953dd6a37" width="450" height="350"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/60fe06e9-2104-4dd9-bae3-b3ae31208b6c"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-##### Observamos que pasó la prueba del archivo `Mult.tst` con el mensaje `Comparison ended successfully`.
 
--------------------------------------------
+## Pruebas de funcionamiento:
 
-<h3 align="center">Fill.asm</h3>
+Al ejecutar nuestro ensamblador realizado en phyton nos arroja los archivos `xxx.hack` de cada uno de los ficheros a convertir
 
-#### I/O-Handling Program (Fill.asm):
-
-Este programa ejecuta un bucle infinito que escucha la entrada del teclado. Cuando se pulsa una tecla (cualquier tecla), el programa ennegrece la pantalla, es decir, escribe ''black'' en cada píxel. Cuando no se pulsa ninguna tecla, la pantalla se limpia. Puede elegir ennegrecer y borrar la pantalla en cualquier orden espacial, siempre que se pulsa una tecla de forma continua durante el tiempo suficiente, la pantalla se ennegrecerá por completo. No pulsar ninguna tecla durante el tiempo suficiente dará como resultado una pantalla en blanco. Este programa tiene un script de prueba (Fill.tst) pero no un archivo de comparación - debe ser comprobado inspeccionando visiblemente la pantalla simulada.
-
-El ordenador Hack interactúa con el teclado físico a través de un mapa de memoria de una sola palabra situado en la dirección RAM 24576 (0x6000). Cada vez quese pulsa una tecla en el teclado físico, su código ASCII de 16 bits aparece en RAM[24576]. Cuando no se pulsa ninguna tecla, aparece el código 0 en esta ubicación. En Además de los códigos ASCII habituales, el teclado Hack reconoce las teclas que se muestran a continuación: 
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/39f7a3cc-7b6f-438d-a99c-c5f9670fb454" /></p>
-<p align="center">Fuente: https://www.nand2tetris.org/_files/ugd/44046b_7ef1c00a714c46768f08c459a6cab45a.pdf</p>
-
-#### Cógido Fill.asm
-```
-// Runs an infinite loop that listens to the keyboard input.
-// When a key is pressed (any key), the program blackens the screen,
-// i.e. writes "black" in every pixel;
-// the screen should remain fully black as long as the key is pressed. 
-// When no key is pressed, the program clears the screen, i.e. writes
-// "white" in every pixel;
-// the screen should remain fully clear as long as no key is pressed.
-
-(START)
-@BLACKID
-M=0
-
-(LOOP)
-@i
-M=0
-
-@KBD
-D=M
-
-@BLACK
-D;JNE
-
-@WHITE
-0;JMP
-
-
-(BLACK)
-@BLACKID
-D=M
-@LOOP
-D;JNE
-
-@i
-D=M
-@SCREEN
-A=A+D
-M=-1
-@i
-M=M+1
-D=M
-
-@8192
-D=A-D
-
-@BLACK
-D;JGT
-
-@BLACKID
-M=1
-
-@LOOP
-D;JEQ
-
-(WHITE)
-@BLACKID
-D=M
-@LOOP
-D;JEQ
-
-@i
-D=M
-@SCREEN
-A=A+D
-M=0
-@i
-M=M+1
-D=M
-
-@8192
-D=A-D
-
-@WHITE
-D;JGT
-
-@BLACKID
-M=0
-
-@LOOP
-D;JEQ
-
-```
-El ordenador Hack es una plataforma von Neumann. Es una máquina de 16 bits, que consiste una CPU, dos módulos de memoria separados que sirven como memoria de y dos dispositivos de E/S asignados a memoria: una pantalla y un teclado.
-
-El programador Hack es consciente de la existencia de dos espacios de direcciones distintos: una memoria de instrucciones y una memoria de datos. Ambas memorias son de 16 bits de ancho y tienen un espacio de direcciones de 15 bits, lo que significa que el tamaño máximo direccionable de cada memoria es de 32K palabras de 16 bits. 
-
-##### Ahora procedemos a colocar el archivo Fill.asm en el ensamblador para convertirlo a binario y corroboramos si quedó correctamente.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ee1ead6e-eb16-489d-840f-8ab9ace6318a" width="450" height="350"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/dd8dae90-cb7d-4704-9a05-792e24f39bac"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-##### Observamos que se compiló adecuadamente, ahora extraemos el archivo punto hack.
+Procedemos a realizar la prueba para cada uno de los archivos con la extensión `xxx.hack` para comprobar su correcto funcionamiento.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ea9d37ce-51ac-4c7e-bc0d-13da2a5d99bf" /></p>
+<p align="center">  Add.asm </p>
+
+#### Convertimos el archivo `Add.asm` a `Add.hack` por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Add.asm` que nos provee el proyecto 6.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bc69f10f-f67e-4333-b129-a1b345873561" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-##### Ahora usamos el programa CPUEmulator para corroborar si el codigo que hicimos y convertimos en el archivo punto hack funciona.
+Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/79f017a2-46e6-4b86-9456-312d204e3428" width="450" height="350" /></p>
-<p align="center">Fuente: Propiedad de los autores</p>
 
-##### Realizamos el test de presionar las teclas para corroborar si la pantalla se pone oscura al momento de presionar cualquier tecla y si se pone blanca si no se presiona ninguna.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/1e1e8d1a-db44-467b-bafd-a8056a97178b" width="450" height="350"/></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-##### Nos damos cuenta que la pantalla se pone de color negro al momento de presionar cualquier tecla.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/23fe5076-2888-4ee8-8037-266dff992056b" width="450" height="350"/></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-##### Nos damos cuenta que la pantalla se queda en blanco se no se presiona ninguna tecla.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/75b54a47-ca0c-463e-99ba-23d75b3fddfa" width="450" height="350"/></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-De acuerdo a toda la información aprendida enteriormente nos damos cuenta que la CPU sólo puede ejecutar programas que residan en la memoria de instrucciones, la cual solo sirve para lectura de los dispositivos, y los programas se cargan en ella utilizando algún medios exógenos. Por ejemplo, la memoria de instrucciones puede implementarse en un chip ROM que está pregrabado con el programa requerido. Para cargar un nuevo programa se realiza sustituyendo todo el chip ROM, de forma similar a la sustitución de un cartucho en una videoconsola. consola de juegos. Para simular esta operación, los simuladores de hardware de la plataforma Hack deben proporcionar un medio para cargar la memoria de instrucciones a partir de un archivo de texto que contenga un programa en lenguaje máquina como lo realizamos anteriormente.
 
 -------------------
 #### Pregunta
-¿Por qué el lenguaje de máquina es importante para definir la arquitectura computacional?<br>
+¿?<br>
 
-Podemos decir que el lenguaje máquina es de suma importancia a la hora de definir la arquitectura computacional, porque es el lenguaje que entiende el hardware del ordenador. De cierto modo, define las instrucciones que el ordenador puede ejecutar por medio del procesador, sin necesidad de interpretación. Así mismo, determina factores importantes de la arquitectura computacional como el conjunto de instrucciones, el tamaño de la palabra, la organización de la memoria y el sistema de numeración.
+
 
