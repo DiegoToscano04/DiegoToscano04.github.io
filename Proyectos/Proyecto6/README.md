@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 4 Machine Language</p>
+<p align="center">  Elaboración Proyecto 6 Assembler </p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -58,44 +58,94 @@ https://diegotoscano04.github.io/  </p>
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/27cd3171-ab6b-4e57-9050-d429f5ae0a71" width="500" height="300" /></p>
 <p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
 
-##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`Comparison ended successfuly` si realizamos la actividad de manera satisfactoria para continuar con los pasos recomendados.
+##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`File compilation & comparison succeeded` si realizamos la actividad de manera satisfactoria.
 
-### Desarrollo Proyecto 4:
+### Desarrollo Proyecto 6:
 
-##### En este proyecto escribiremos y ejecutaremos programas de máquina de bajo nivel, se escribirán programas en el lenguaje de Hack assembly y se hará uso de de un ensamblador para traducirlos a código binario y probar el código resultante el cual estára en binario.
+##### En el siguiente proyecto se va a implementar un programa ensamblador, los cuales son programas de bajo nivel escritos en lenguaje de máquina simbólicos. Los programadores en pocas ocaciones escriben programas directamente en lenguaje de máquina, lo que si es usual es que los programadores desarrollen programas de alto rendimiento que suelen inspeccionar el código ensamblador generado por los compiladores.
 
-##### Se ejecutará el proyecto en un emulador de CPU, diseñado para ejecutar código binario escrito en en Hack assembly.
-
+##### A través de este procedimiento se puede inspeccionar su código de alto nivel y poder optimizarlo para obtener un mejor rendimiento, todo esto se implementa por medio de los denominados ensambladores, los cuales son programas que traducen código escrito en lenguaje de máquna simbólico a código escrito en lenguaje de máquina binario.
 
 ## Objetivos Generales
 
-- Obtener una práctica de programación de bajo nivel en lenguaje de máquina.
-- Familiarizarse con el conjunto de intrucciones Hack antes de construir el ordenador Hack en el proyecto 5.
-- Conocer el proceso de ensamblado antes de construir el ensamblador en el proyecto 6.
+- Realizar una práctica de programación para crear un ensamblador en cualquier lenguaje de programación.
+- Utilizar la lógica aprendida durante los proyectos anteriores junto con su documentación para entender el funcionamiento correcto de un ensamblador.
+- Cuando se consiga el propósito de construir el ensamblador se deben realizar testeos para comprobar su funcionamiento.
 ------------
 
 ## Objetivos Específicos
 
-- Escribir y testear los programas `Mult.asm` y `Fill.asm`.
-- Usar editor de texto plano para realizar los programas y luego pasarlos por el programa Assambler y CPUEmulator.
+- Implementar en cualquier lenguaje de programación un ensamblador que traduzca lenguaje de máquina simbólico a lenguaje de máquina binario.
+- Hacer uso de los archivos `add`,`max`,`pong`,`rect` y de la herramienta proporsionada por Nand2Tetris: `Assembler(2.5)` para llevar a cabo las comparaciones de los archivos `xxx.hack` generados por nuestro ensamblador y comprobar su correcto funcionamiento.
 -----------
 
-## Pasos a seguir: 
+#### Construcción del ensamblador:
 
-0. Entrar a la carpeta de su PC donde se encuentre el archivo Xxx.asm. Inicie el ensamblador y el CPUEmulator desde la carpeta actual.
-1. Use un editor de texto plano para editar el archivo Xxx.asm y guarde la nueva versión en su carpeta actual.
-2. Utilice el ensamblador para traducir el archivo Xxx.asm. Si hay errores devovlerse al paso 1.
-3. Guarde el archivo Xxx.hack resultante en la carpeta actual.
-4. Cargue el archivo Xxx.hack en el emulador de CPU, ejecute el programa e inspeccione los valores que recibe mientras ejecuta, si tiene errorres devovlerse al paso 1.
-5. Cargue el archivo Xxx.tst suministrado en el emulador de CPU y ejecútelo, si hay errores devolverse al paso 1.
------------------------
-<h3 align="center">Mult.asm</h3>
+Cuando se le da al ensamblador como argumento de línea de comandos un archivo Prog.asm que contenga un programa en lenguaje ensamblador válido de programa en lenguaje, el ensamblador Hack válido debería traducirse correctamente a código binario Hack, y almacenarse en un archivo llamado Prog.hack, ubicado en la misma carpeta que el archivo fuente (si existe un archivo con este nombre, se sobrescribirá). La salida producida por su ensamblador debe ser idéntica a la salida producida por el ensamblador suministrado.
 
-#### Multiplication Program (Mult.asm):
+##### Entrada (Prog.asm): Un archivo de texto que contiene una secuencia de líneas, cada una de las cuales representa un comentario, una instrucción A, una instrucción C, o una declaración de etiqueta.
 
-Las entradas de este programa son los valores actuales almacenados en R0 y R1 (es decir, las dos posiciones superiores de la RAM). El programa calcula el producto R0*R1 y almacena el resultado en R2. Asumimos (en este programa) que R0>=0, R1>=0, y R0*R1<32768. No es necesario que su programa compruebe estas condiciones, sino que asuma que se cumplen. Los scripts suministrados Mult.tst y Mult.cmp probarán su programa en varios valores de datos representativos.
+##### Salida (Prog.hack): un fichero de texto que contiene una secuencia de líneas, cada una de las cuales es una cadena de dieciséis caracteres de 0 y 1.
 
-##### Antes de poder ejecutarse, un programa simbólico debe traducirse a instrucciones que el ordenador pueda decodificar y ejecutar.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8857f568-2aa3-47f4-8a46-0d4dc0edea42"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
+
+##### Inicializar: Al abrir el archivo de entrada (Prog.asm) se prepara para procesarlo y construye una tabla de símbolos y le añade todos los símbolos predefinidos
+
+##### First Pass: Lee las líneas del programa, una a una, centrándose sólo en las declaraciones (de etiquetas). Añade las etiquetas encontradas a la tabla de símbolos
+
+##### Second Pass (bucle principal): (comienza de nuevo desde el principio del fichero) Mientras haya más líneas que procesar: Obtiene la siguiente instrucción, y la analiza si la instrucción es @ símbolo, si el símbolo no está en la tabla de símbolos, lo añade a la tabla y traduce el símbolo a su valor binario.
+
+##### Si la instrucción es dest =comp ; jump traduce cada uno de los tres campos a su valor binario y ensambla los valores binarios descritos anteriormente en una cadena de dieciséis 0's y 1's escribiendo la cadena en el fichero de salida.
+
+#### Arquitectura del ensamblador:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/83f1dce3-734d-47c8-b979-92066f2d6adb"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
+
+#### Contrucción SymbolTable:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/5b519b34-166b-4081-b622-aecf3ece8bfb"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+#### Construcción Code:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/83f77ef3-a53a-4b8f-9c1c-8e3930f0f4ff"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
+
+### COMP:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4fc0734a-ac30-4309-9e4a-edec737fff16"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### DEST:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d09d8cf0-e612-42e5-a62c-7fb4e60bea02"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### JUMP:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/38445a72-84c0-41fd-ada8-38ac2221382c"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+#### Construcción Parser:
+
+### VariableSpot:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/76393980-eb28-4154-a8be-369e0b9edd75"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### First pass: 
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a05413eb-3c7d-4706-b8fc-a5b251e7e6ce"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Second pass:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8812dcac-ff14-4665-bc71-67ff951a4743"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### 
 
 #### Hack instructions
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/be76646a-f832-4bab-a8c6-e53a121e1e0a" width="500" height="300" /></p>
