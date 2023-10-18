@@ -170,7 +170,7 @@ Al ejecutar nuestro ensamblador realizado en phyton nos arroja los archivos `xxx
 
 Procedemos a realizar la prueba para cada uno de los archivos con la extensión `xxx.hack` para comprobar su correcto funcionamiento.
 
-<p align="center">  Add.asm </p>
+<h3 align="center">Add.asm</h3>
 
 #### Convertimos el archivo `Add.asm` a `Add.hack` por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Add.asm` que nos provee el proyecto 6.
 
