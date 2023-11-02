@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto VM II: Program Control </p>
+<p align="center">  Elaboración Proyecto 8 VM II: Program Control </p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -181,9 +181,9 @@ Cada comando aritmético/lógico extrae uno o dos valores de la pila, calcula un
 
 ##### Después de completar el proceso de traducción de los archivos .vm mediante la herramienta VM Translator y obtener así un archivo de texto que alberga el código ensamblador de hack en formato .asm, el siguiente paso crucial radica en verificar la precisión del traductor. Para ello, se requiere emplear los archivos adjuntos .tst y .cmp. Estos archivos desempeñan un papel fundamental al permitir la ejecución del programa convertido en el emulador de CPU proporcionado. Esta verificación no solo garantiza la correcta generación del código máquina esperado, sino que también valida la exactitud y coherencia del proceso de traducción. Es un paso esencial para asegurar que el código traducido funcione de manera óptima en el entorno de la arquitectura Hack.
 
-#### Contrucción CommandType:
+#### Contrucción Type:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f2816b53-1936-4013-8e00-6d902a726a5b"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bf70352f-89d3-4d73-a093-470ccaa7eec0"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 Devuelve una constante que representa el tipo del comando actual. Si el comando actual es un comando aritmético-lógico, devuelve C_ARITHMETIC.
@@ -209,47 +209,70 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 
 #### Construcción Análisis/Inicialización:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f6a3fbcc-0a3f-4522-a368-70c89410e42f"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/93394338-d2e8-43c1-8d47-0a0bf6090165"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### First Parse: 
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0d4715ee-e0f8-4720-a08a-3d6ca3cd2395"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2d383c7f-576d-48c4-8ad9-dd4a34d74034"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### strip:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/6a51ff53-3a8e-412f-9b99-f5dfbac6d363"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad5bec39-7b02-4e2b-915b-9355ed679284"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Parse
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b59dc147-8244-461d-b813-4daa9c95e43f"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d643d63c-a11f-47ba-917a-281d06cf1211"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### CommandType:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/9eba0e80-0acc-4d8c-99db-26a449b65718"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f237709e-8b81-433e-b5a0-860c8b33f261"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Arithmetic:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a3bd2f30-cd3d-44f7-bb69-a2eb267fb555"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b29a8f69-f8ed-465e-ba77-f8f6b6c3e8f9"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-### SP,pop stack, push stack and push Pop:
+### SP,pop stack, push stack, pop stack and push Pop:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0de7be3c-98fb-45f4-86f1-186944a89643"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/396e1f91-12ce-4293-b3be-918cdd9cafba"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Address:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/836e48c4-bae1-41bf-ad52-b7a316f04b42"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/87deb1f7-44f6-45f0-992e-6d1d922fef7e"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Label, goto, write if
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ae079457-307d-4d59-b1a5-6a910dc01d48"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Write function
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/1da8551d-5176-43d1-a975-a4974a4f7410"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Write call
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4558702c-2ca5-4969-92b0-32b875074561"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Write return
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e4b8e4e8-edaa-414d-800a-2505796c4711"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Documentos a evaluar:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b744252a-ad92-4af4-abf3-ac6c8ed12a54"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bc73f583-05dc-4ebb-af16-ac2249c0ce4f"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/018ac4d6-fe6e-4bbf-b587-cecfb6a2597c"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ## Pruebas de funcionamiento:
