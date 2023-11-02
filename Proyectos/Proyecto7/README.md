@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 6 Assembler </p>
+<p align="center">  Elaboración Proyecto 7 VM I: Stack Arithmetic </p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -23,24 +23,24 @@ https://diegotoscano04.github.io/  </p>
 ###### En la carpeta `projects` estarán los proyectos del 1 al 13 los cuales son archivos que deben modificarse para completar las prácticas mientras se trabaja en varios proyectos de nand2tetris.
 ###### En la carpeta `tools` estarán las herramientas del software nand2tetris.
 
-## Uso del programa Assembler 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/72f725df-6dcf-4c43-a30e-e663c3258e0d" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+## Uso del programa VM emulator 
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/32618071-ced9-417f-b99b-72187e6840d7" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4646403e-b677-45d1-9083-6aca9836d41c" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d17fdb7f-66f7-462e-8e90-8cf84d066091" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/6bfba127-0ef7-4b41-966e-a03ee7f81ea1" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2267978b-e3dd-4555-8c32-16a85fbee744" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d64ca4d6-a5d8-46fe-9fb2-18695c2d61e1" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/25035db8-6837-4a80-86d0-c3c44337f782" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d433992f-1eb1-4ab1-b95b-65fae4dd71bf" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/71a0d17e-160d-43f6-9535-524176c40585" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bece867e-716c-48a8-97df-4d7a481a05d8" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/1C10JSIwKVlz5WyvHzUtZkjrZpZMqe8n1/edit#slide=id.p14</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2b988c2c-0dcc-4c83-b0e6-80852b5513cc" width="500" height="300" /></p>
+<p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
 ## Uso del programa CPUEmulator
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/831c8911-a1a7-4444-b732-23f1aa21c92a" /></p>
@@ -60,24 +60,27 @@ https://diegotoscano04.github.io/  </p>
 
 ##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`File compilation & comparison succeeded` si realizamos la actividad de manera satisfactoria.
 
-### Desarrollo Proyecto 6:
+### Desarrollo Proyecto 7:
 
-##### En el siguiente proyecto se va a implementar un programa ensamblador, los cuales son programas de bajo nivel escritos en lenguaje de máquina simbólicos. Los programadores en pocas ocaciones escriben programas directamente en lenguaje de máquina, lo que si es usual es que los programadores desarrollen programas de alto rendimiento que suelen inspeccionar el código ensamblador generado por los compiladores.
-
-##### A través de este procedimiento se puede inspeccionar su código de alto nivel y poder optimizarlo para obtener un mejor rendimiento, todo esto se implementa por medio de los denominados ensambladores, los cuales son programas que traducen código escrito en lenguaje de máquna simbólico a código escrito en lenguaje de máquina binario.
+##### En el siguiente proyecto se va a implementar la elaboración de un compilador de dos niveles, el compilador jack genera código VM para una máquina virtual, posteriormente el código VM es traducido a lenguaje de máquina usando un programa denominado traductor VM, el propósito de este proyecto es elaborar una versión temprana o básica de dicho traductor VM para posteriormente completarlo en el siguiente proyecto.
 
 ## Objetivos Generales
 
-- Realizar una práctica de programación para crear un ensamblador en cualquier lenguaje de programación.
-- Utilizar la lógica aprendida durante los proyectos anteriores junto con su documentación para entender el funcionamiento correcto de un ensamblador.
-- Cuando se consiga el propósito de construir el ensamblador se deben realizar testeos para comprobar su funcionamiento.
+- Escribir un programa que lea y analice los comando de la VM.
+- Debe leer un programa a la vez y generar instrucciones hack que se ejecuten en la VM.
 ------------
 
 ## Objetivos Específicos
 
-- Implementar en cualquier lenguaje de programación un ensamblador que traduzca lenguaje de máquina simbólico a lenguaje de máquina binario.
-- Hacer uso de los archivos `add`,`max`,`pong`,`rect` y de la herramienta proporsionada por Nand2Tetris: `Assembler(2.5)` para llevar a cabo las comparaciones de los archivos `xxx.hack` generados por nuestro ensamblador y comprobar su correcto funcionamiento.
+- Implementar en cualquier lenguaje de programación un traductor de VM a hack.
+- Hacer uso de los archivos en las carpetas `MemoryAccess` y `StackArithmetic` y de las herramientas proporsionadas por Nand2Tetris: `The CPU emulator` y `The VM emulator`para llevar a cabo las comparaciones de los archivos de test y comprobar su correcto funcionamiento.
 -----------
+
+## Pasos
+
+1. Utilizar el traductor nuestro parcialmente implementado para traducir Xxx.vm. El resultado debería ser un archivo de texto llamado Xxx.asm, que contiene el código ensamblador Hack generado por nuestro traductor.
+2. Inspeccione el código Xxx.asm generado por el traductor. Si hay errores visibles de sintaxis (o cualquier otro) error, depure y corrija su traductor.
+3. Utilizar el script Xxx.tst suministrado para cargar, ejecutar y probar en el emulador de CPU, el programa Xxx.asm creado por el  traductor VM.
 
 #### Construcción del ensamblador:
 
