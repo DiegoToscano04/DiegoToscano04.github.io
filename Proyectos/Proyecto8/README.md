@@ -190,7 +190,7 @@ Devuelve una constante que representa el tipo del comando actual. Si el comando 
 
 #### arg1
 
-Devuelve el primer argumento del comando actual. En el caso de C_ARITHMETIC, se devuelve el propio comando (add,sub,etc.).
+Devuelve el primer argumento del comando actual. En el caso de C_ARITHMETIC, se devuelve el propio comando (add,sub,etc.)
 No debe llamarse si el comando actual es C_RETURN.
 
 #### arg2
