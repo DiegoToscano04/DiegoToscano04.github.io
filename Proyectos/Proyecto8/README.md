@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 7 VM I: Stack Arithmetic </p>
+<p align="center">  Elaboración Proyecto VM II: Program Control </p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -60,20 +60,21 @@ https://diegotoscano04.github.io/  </p>
 
 ##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`File compilation & comparison succeeded` si realizamos la actividad de manera satisfactoria.
 
-### Desarrollo Proyecto 7:
+### Desarrollo Proyecto 8:
 
-##### En el siguiente proyecto se va a implementar la elaboración de un compilador de dos niveles, el compilador jack genera código VM para una máquina virtual, posteriormente el código VM es traducido a lenguaje de máquina usando un programa denominado traductor VM, el propósito de este proyecto es elaborar una versión temprana o básica de dicho traductor VM para posteriormente completarlo en el siguiente proyecto.
+##### Con base en el proyecto 7 el cual consistia en construir un traductor de lenguaje VM a lenguaje de máquina procederemos a extender este traductor para manejar los comandos de bifurcación y función del lenguaje VM. Además, añadirá la capacidad de traducir programas VM multi-archivo. Esto completará el desarrollo del traductor VM que más tarde servirá como backend del compilador.
 
 ## Objetivos Generales
 
-- Escribir un programa que lea y analice los comando de la VM.
-- Debe leer un programa a la vez y generar instrucciones hack que se ejecuten en la VM.
+- Extender el traductor VM básico construido en el proyecto 7 en un traductor VM a gran escala, diseñado para manejar programas multi-fichero escritos en el lenguaje VM.
+
 ------------
 
 ## Objetivos Específicos
 
-- Implementar en cualquier lenguaje de programación un traductor de VM a hack.
-- Hacer uso de los archivos en las carpetas `MemoryAccess` y `StackArithmetic` y de las herramientas proporsionadas por Nand2Tetris: `The CPU emulator` y `The VM emulator`para llevar a cabo las comparaciones de los archivos de test y comprobar su correcto funcionamiento.
+- Completar la construcción de un traductor de VM a Hack, conforme a la Especificación VM y al Mapeo VM Estándar en la Plataforma Hack.
+- Utiliza tu traductor para traducir los programas de prueba VM suministrados, obteniendo los programas correspondientes escritos en el lenguaje ensamblador Hack.
+- Cuando ejecutemos en el emulador de CPU suministrado junto con los scripts de prueba, los programas en ensamblador generados por el traductor deben proporcionar los resultados exigidos por los archivos de comparación suministrados.
 -----------
 
 ## Pasos
@@ -161,8 +162,24 @@ Cada comando aritmético/lógico extrae uno o dos valores de la pila, calcula un
 
 ##### Traductor VM funcionamiento:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d0a81d88-cd2a-4399-906b-54450431d371"/></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/3bcadd8b-7868-4609-a514-33c24b27e2ac"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BexrNmdqYhKPkqD_Y81qNAUeyfzl-ZtO/view</p>
+
+##### Compilación:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/71520023-e571-4a63-bf1f-268d04eab618"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BexrNmdqYhKPkqD_Y81qNAUeyfzl-ZtO/view</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f67570a0-e661-45b4-9970-643f1b27a691"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BexrNmdqYhKPkqD_Y81qNAUeyfzl-ZtO/view</p>
+
+
+##### Diseño propuesto:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d3665b92-0e64-46ce-9b2e-e295a6608edf"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BexrNmdqYhKPkqD_Y81qNAUeyfzl-ZtO/view</p>
+
+##### Después de completar el proceso de traducción de los archivos .vm mediante la herramienta VM Translator y obtener así un archivo de texto que alberga el código ensamblador de hack en formato .asm, el siguiente paso crucial radica en verificar la precisión del traductor. Para ello, se requiere emplear los archivos adjuntos .tst y .cmp. Estos archivos desempeñan un papel fundamental al permitir la ejecución del programa convertido en el emulador de CPU proporcionado. Esta verificación no solo garantiza la correcta generación del código máquina esperado, sino que también valida la exactitud y coherencia del proceso de traducción. Es un paso esencial para asegurar que el código traducido funcione de manera óptima en el entorno de la arquitectura Hack.
 
 #### Contrucción CommandType:
 
@@ -237,32 +254,29 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 
 ## Pruebas de funcionamiento:
 
-Al ejecutar nuestro traductor VM realizado en phyton nos arroja los archivos `xxx.asm` de cada uno de los ficheros a convertir
+Procedemos a corroborar la precisión del traductor, para esto hacemos uso de los archivos `xxx.tst` y  `xxx.cmp`.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/81e60a82-2cba-4912-b45b-1f46287d4da0"/></p>
+<h3 align="center">BasicLoop.asm</h3>
+
+#### Descripción: Calcula la suma de 1 a n y verifica los comandos de bifurcación 'goto' e 'if-goto'.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/976af9c3-4fcd-4028-8c99-74ce3ac778d4" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Procedemos a realizar la prueba para cada uno de los archivos con la extensión `xxx.asm` para comprobar su correcto funcionamiento.
+Scripts de prueba: BasicLoopVME.tst / Verifica BasicLoop.tst y BasicLoop.cmp.
 
-<h3 align="center">BasicTest.vm</h3>
-
-#### Convertimos el archivo `BasicTest.vm` a `BasicTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `BasicTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/fb3afce4-9fde-4e8f-85a5-903aa1ae1fba" width="500" height="450" /></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
 
 -----------------------------
 
-<h3 align="center">PointerTest.vm</h3>
+<h3 align="center">FibonacciSeries.asm/h3>
 
-#### Convertimos el archivo `PointerTest.vm` a `PointerTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `PointerTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+#### Descripción: Calcula y almacena los primeros n elementos de la serie de Fibonacci, desafiando las bifurcaciones de la máquina virtual.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bab48bdb-2fb1-4a60-9fbe-2947e36330ef" width="500" height="450" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/566e9602-2c3c-4625-a083-295f529bd86b" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+Scripts de prueba: FibonacciSeriesVME.tst / Comprueba FibonacciSeries.tst y FibonacciSeries.cmp.
+
 
 ---------------------------------
 
@@ -277,28 +291,58 @@ Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que s
 
 -------------------------------
 
-<h3 align="center">StackTest.vm</h3>
+<h3 align="center">SimpleFunction.asm</h3>
 
-#### Convertimos el archivo `StackTest.vm` a `StackTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `StackTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+#### Descripción: Realiza un cálculo simple y prueba la ejecución de funciones y comandos de retorno de la máquina virtual.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/c3514578-6d54-4e9f-96e2-c8565eca3a9a" width="500" height="450" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/7ca36191-1250-45d6-a617-2244d48bbe9e" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+Scripts de prueba: SimpleFunctionVME.tst / Verifica SimpleFunction.tst y SimpleFunction.cmp.
+
 
 -----------------------------------
 
 
-<h3 align="center">SimpleAdd.vm</h3>
+<h3 align="center">NestedCall.asm</h3>
 
-#### Convertimos el archivo `SimpleAdd.vm` a `SimpleAdd.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `SimpleAdd.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+#### Descripción: Prueba los comandos de llamada y retorno de funciones, opcional pero útil tras pasar SimpleFunction y antes de FibonacciElement.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a3a6e88e-2bd0-4993-bdfa-121b73429896" width="500" height="450" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d8a53756-39dd-4ed1-a136-a43c86e80300" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+Scripts de prueba: NestedCallVME.tst / Confirma NestedCall.tst y NestedCall.cmp.
+
 
 ----------------------------
+
+<h3 align="center">FibonacciElement.asm</h3>
+
+#### Descripción: Descripción: Evalúa el control de llamada a funciones, el código de arranque y otros comandos de la máquina virtual. Contiene Main.fibonacci y Sys.init.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e22fd07a-993d-4770-b61f-bcf3e471eb67" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Scripts de prueba: FibonacciElementVME.tst / Comprueba FibonacciElement.tst y FibonacciElement.cmp.
+
+
+----------------------------------
+
+
+<h3 align="center">StaticsTest.asm</h3>
+
+#### Descripción: Descripción: Contiene funciones para establecer y obtener valores estáticos, probando el manejo de memoria estática.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/64558ec8-6076-4dd9-a25d-52f9e4de7f97" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Scripts de prueba: StaticsTestVME.tst / Verifica StaticsTest.tst y StaticsTest.cmp.
+
+
+
+
+
+
 
 
 
