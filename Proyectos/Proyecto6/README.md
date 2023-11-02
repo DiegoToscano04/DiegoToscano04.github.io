@@ -179,11 +179,50 @@ Procedemos a realizar la prueba para cada uno de los archivos con la extensión 
 
 Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
 
+----------------------
 
+<h3 align="center">Max.asm y MaxL.asm</h3>
+
+#### Convertimos el archivo Max.asm a Max.hack por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Max.asm` y `MaxL.asm` que nos provee el proyecto 6.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/279fb7b4-f328-46df-8d7a-e177648208b5" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
+
+----------------------
+
+<h3 align="center">Pong.asm y PongL.asm</h3>
+
+#### Convertimos el archivo Pong.asm a Pong.hack por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Pong.asm` y `PongL.asm` que nos provee el proyecto 6.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/59249124-a2af-4939-8b97-45509e6c1d2c" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
+
+----------------------
+
+<h3 align="center">Rect.asm y RectL.asm</h3>
+
+#### Convertimos el archivo Rect.asm a Rect.hack por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Rect.asm` y `RectL.asm` que nos provee el proyecto 6.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/1159122d-de48-4c40-be1c-fb1f7436345e" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
 
 -------------------
-#### Pregunta
-¿?<br>
+
+### Conclusión del proyecto 6
+
+En este proyecto, implementamos un ensamblador en Python que traduce lenguaje de máquina simbólico a lenguaje de máquina binario. El ensamblador fue capaz de traducir los archivos de prueba proporcionados por Nand2Tetris, incluyendo un programa simple que suma dos números, un programa que encuentra el número más grande de dos números, un juego de pong simple y un programa que dibuja un rectángulo en la pantalla. En general, este proyecto fue una experiencia muy positiva que nos ayudó a aprender sobre cómo traducir lenguaje de máquina simbólico a código binario.
+
+-------------------
+### Pregunta
+#### ¿Teniendo en cuenta las características del ensamblador, ¿Cuál es la principal limitante que observan? Justifique su respuesta.?<br>
+
+La principal limitación del ensamblador puede atribuirse al propio lenguaje utilizado para programar en él. Este lenguaje está restringido a un espacio de 6 bits de memoria para las operaciones entre dos variables, lo que conduce a un aumento en el tamaño del código debido a la falta de flexibilidad. Además, el ensamblador es una herramienta que requiere depuración línea por línea, lo que lo convierte en un lenguaje con una estructura de flujo estricta. Además, las operaciones y los métodos que emplea están limitados a un número específico de bits previamente definidos.
 
 
 
