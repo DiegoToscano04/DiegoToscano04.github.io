@@ -89,13 +89,13 @@ class VM_tanslator:
         elif line == "not":
             newline += "M=!M\n"
 
-        elif line in ["eq","ls","gt"]:
+        elif line in ["eq","lt","gt"]:
             newline += "D=M-D\n"
             newline += "@C{}\n".format(self.BOOLEANS)
 
             if line == "eq":
                 newline += "D;JEQ\n"
-            elif line == "ls":
+            elif line == "lt":
                 newline += "D;JLT\n"
             elif line == "gt":
                 newline += "D;JGT\n"
@@ -103,7 +103,7 @@ class VM_tanslator:
             newline += self.SP() + "M=0\n"
             newline += "@CONTINUE{}\n".format(self.BOOLEANS) + "0;JMP\n"
 
-            newline += "(C{})".format(self.BOOLEANS)
+            newline += "(C{})\n".format(self.BOOLEANS)
             newline += self.SP() + "M=-1\n"
 
             newline += "(CONTINUE{})\n".format(self.BOOLEANS)
