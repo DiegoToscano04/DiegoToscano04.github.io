@@ -82,18 +82,88 @@ https://diegotoscano04.github.io/  </p>
 2. Inspeccione el código Xxx.asm generado por el traductor. Si hay errores visibles de sintaxis (o cualquier otro) error, depure y corrija su traductor.
 3. Utilizar el script Xxx.tst suministrado para cargar, ejecutar y probar en el emulador de CPU, el programa Xxx.asm creado por el  traductor VM.
 
-#### Construcción del ensamblador:
+#### Construcción del traductor VM:
 
-Cuando se le da al ensamblador como argumento de línea de comandos un archivo Prog.asm que contenga un programa en lenguaje ensamblador válido de programa en lenguaje, el ensamblador Hack válido debería traducirse correctamente a código binario Hack, y almacenarse en un archivo llamado Prog.hack, ubicado en la misma carpeta que el archivo fuente (si existe un archivo con este nombre, se sobrescribirá). La salida producida por su ensamblador debe ser idéntica a la salida producida por el ensamblador suministrado.
+El código VM que genera el compilador está diseñado para operar en una máquina de pila abstracta. El traductor de la máquina virtual traduce este código a máquina, dicho de otro modo: el traductor VM realiza / implementa
+la máquina de pila abstracta en la plataforma host.
 
-##### Entrada (Prog.asm): Un archivo de texto que contiene una secuencia de líneas, cada una de las cuales representa un comentario, una instrucción A, una instrucción C, o una declaración de etiqueta.
+#### Operaciones básicas:
 
-##### Salida (Prog.hack): un fichero de texto que contiene una secuencia de líneas, cada una de las cuales es una cadena de dieciséis caracteres de 0 y 1.
+##### push: añade un elemento en la parte superior de la pila
+##### pop: elimina el elemento superior
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8857f568-2aa3-47f4-8a46-0d4dc0edea42"/></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/000f3b63-342e-4103-a7b6-f1fbff71953a"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
 
-##### Inicializar: Al abrir el archivo de entrada (Prog.asm) se prepara para procesarlo y construye una tabla de símbolos y le añade todos los símbolos predefinidos
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/28ddc899-15cf-4458-b3dd-e11b77a4cea1"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a215b153-af67-4c6b-ba05-26f5cca17d04"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e48e8121-f484-4250-85b7-e3afff6436b3"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+
+##### Cuando el compilador compila un método de alto nivel, representa:
+
+1. Las variables locales del método en el segmento virtual local
+2. Los argumentos del método en el segmento virtual argument
+3. Los campos del objeto actual en el segmento virtual this
+4. Los elementos del array actual en el segmento virtual that
+
+##### Variables Estáticas:
+
+Un programa Jack es una colección de una o más clases Jack
+- Cada clase es una unidad de compilación independiente
+- Cada archivo de clase Foo.jack se compila en un archivo VM llamado Foo.vm
+- El compilador asigna las variables estáticas a nivel de clase de todas las clases en un segmento VM llamado static
+
+##### Segmento estático:
+
+El segmento estático se almacena en un bloque de RAM fijo, comenzando en la dirección 16; al traducir un archivo VM llamado Foo.vm: Para push/pop static i,, genera código ensamblador que ejecute push/pop Foo.i.
+
+Posteriormente, el ensamblador Hack asignará cada símbolo Foo.i en el código ensamblador generado en RAM[16], RAM[17], ..., RAM[255].
+
+##### Objects and arrays
+
+1. Los objetos y matrices que manipulan los programas se almacenan en la RAM
+2. Los campos del objeto actual están representados por el segmento this
+3. Los elementos del array actual están representados por el segmento that
+4. Las direcciones base de this y that se almacenan en los punteros THIS y THAT así como en los punteros 0 y 1 (un segmento de dos posiciones)
+
+Para push/pop puntero 0, genera un código ensamblador que ejecute: push/pop THIS
+Para push/pop puntero 1, genera un código ensamblador que ejecute: push/pop THAT
+
+##### Abstracción
+
+Cada comando aritmético/lógico extrae uno o dos valores de la pila, calcula una de estas funciones sobre estos valores y coloca el valor calculado en la pila.
+
+#### implementación VM
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ac2c987e-4e9f-4d48-a09a-39bae3782c84"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+#### Emulando un programa VM:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/784045bd-10ba-4663-ad42-9d7221d78985"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+#### Test de un programa VM:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2918f48c-cbb7-4fcd-98bb-f69edd5d5786"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+##### Recopilación de programas:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/eae954ba-77fe-4cd1-8b18-12d87cc5a952"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
+##### Traductor VM funcionamiento:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d0a81d88-cd2a-4399-906b-54450431d371"/></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
+
 
 ##### First Pass: Lee las líneas del programa, una a una, centrándose sólo en las declaraciones (de etiquetas). Añade las etiquetas encontradas a la tabla de símbolos
 
