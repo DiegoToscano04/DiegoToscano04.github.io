@@ -237,27 +237,69 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 
 ## Pruebas de funcionamiento:
 
-Al ejecutar nuestro ensamblador realizado en phyton nos arroja los archivos `xxx.hack` de cada uno de los ficheros a convertir
+Al ejecutar nuestro traductor VM realizado en phyton nos arroja los archivos `xxx.asm` de cada uno de los ficheros a convertir
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/dd8dae90-cb7d-4704-9a05-792e24f39bac"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/81e60a82-2cba-4912-b45b-1f46287d4da0"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Procedemos a realizar la prueba para cada uno de los archivos con la extensión `xxx.hack` para comprobar su correcto funcionamiento.
+Procedemos a realizar la prueba para cada uno de los archivos con la extensión `xxx.asm` para comprobar su correcto funcionamiento.
 
-<h3 align="center">Add.asm</h3>
+<h3 align="center">BasicTest.vm</h3>
 
-#### Convertimos el archivo `Add.asm` a `Add.hack` por medio de nuestro ensamblador y lo comparamos a través de la herramienta Assembler (2.5) con el archivo fuente `Add.asm` que nos provee el proyecto 6.
+#### Convertimos el archivo `BasicTest.vm` a `BasicTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `BasicTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bc69f10f-f67e-4333-b129-a1b345873561" width="500" height="450" /></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/fb3afce4-9fde-4e8f-85a5-903aa1ae1fba" width="500" height="450" /></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-Corroboramos que la conversión de código escrito en lenguaje de máquina simbólico a código escrito en lenguaje de máquina binario es correcta.
+Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+
+-----------------------------
+
+<h3 align="center">PointerTest.vm</h3>
+
+#### Convertimos el archivo `PointerTest.vm` a `PointerTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `PointerTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bab48bdb-2fb1-4a60-9fbe-2947e36330ef" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+
+---------------------------------
+
+<h3 align="center">StaticTest.vm</h3>
+
+#### Convertimos el archivo `StaticTest.vm` a `StaticTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `StaticTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/80dd4f4d-268f-45c1-b1bc-0e7b86251597" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+
+-------------------------------
+
+<h3 align="center">StackTest.vm</h3>
+
+#### Convertimos el archivo `StackTest.vm` a `StackTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `StackTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/c3514578-6d54-4e9f-96e2-c8565eca3a9a" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+
+-----------------------------------
 
 
+<h3 align="center">SimpleAdd.vm</h3>
 
--------------------
-#### Pregunta
-¿?<br>
+#### Convertimos el archivo `SimpleAdd.vm` a `SimpleAdd.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `SimpleAdd.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a3a6e88e-2bd0-4993-bdfa-121b73429896" width="500" height="450" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
+
+----------------------------
+
 
 
 
