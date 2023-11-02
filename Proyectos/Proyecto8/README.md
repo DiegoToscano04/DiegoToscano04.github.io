@@ -249,7 +249,7 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 
 ### Label, goto, write if
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ae079457-307d-4d59-b1a5-6a910dc01d48"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e2ffb4eb-f11d-4bdf-963e-65b7ffe3934b"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Write function
@@ -272,7 +272,7 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bc73f583-05dc-4ebb-af16-ac2249c0ce4f"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/018ac4d6-fe6e-4bbf-b587-cecfb6a2597c"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/e5ea7726-6ace-490f-ae3b-68847e81d90e"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ## Pruebas de funcionamiento:
@@ -291,7 +291,7 @@ Scripts de prueba: BasicLoopVME.tst / Verifica BasicLoop.tst y BasicLoop.cmp.
 
 -----------------------------
 
-<h3 align="center">FibonacciSeries.asm/h3>
+<h3 align="center">FibonacciSeries.asm</h3>
 
 #### Descripción: Calcula y almacena los primeros n elementos de la serie de Fibonacci, desafiando las bifurcaciones de la máquina virtual.
 
@@ -303,16 +303,6 @@ Scripts de prueba: FibonacciSeriesVME.tst / Comprueba FibonacciSeries.tst y Fibo
 
 ---------------------------------
 
-<h3 align="center">StaticTest.vm</h3>
-
-#### Convertimos el archivo `StaticTest.vm` a `StaticTest.asm` por medio de nuestro traductor VM implementado en python y lo ejecutamos a través de la herramienta CPU emulator con el archivo fuente de test `StaticTest.tst` que nos provee el proyecto 7 para corroborar su correcto funcionamiento.
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/80dd4f4d-268f-45c1-b1bc-0e7b86251597" width="500" height="450" /></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-Corroboramos que el test esté ejecutado de manera satisfactoria, es decir que se haya realizado bien la traducción del código VM a lenguaje de máquina.
-
--------------------------------
 
 <h3 align="center">SimpleFunction.asm</h3>
 
