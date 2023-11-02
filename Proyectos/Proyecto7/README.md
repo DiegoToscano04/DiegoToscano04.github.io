@@ -237,7 +237,7 @@ Devuelve el segundo argumento del comando actual, sólo debe invocarse si el com
 
 ## Pruebas de funcionamiento:
 
-Al ejecutar nuestro traductor VM realizado en phyton nos arroja los archivos `xxx.asm` de cada uno de los ficheros a convertir
+Al ejecutar nuestro traductor VM realizado en phyton nos arroja los archivos `xxx.asm` de cada uno de los ficheros a convertir.
 
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/81e60a82-2cba-4912-b45b-1f46287d4da0"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
