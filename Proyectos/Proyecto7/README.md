@@ -164,75 +164,76 @@ Cada comando aritmético/lógico extrae uno o dos valores de la pila, calcula un
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d0a81d88-cd2a-4399-906b-54450431d371"/></p>
 <p align="center">Fuente: https://drive.google.com/file/d/1BPmhMLu_4QTcte0I5bK4QBHI8SACnQSt/view</p>
 
+#### Contrucción CommandType:
 
-##### First Pass: Lee las líneas del programa, una a una, centrándose sólo en las declaraciones (de etiquetas). Añade las etiquetas encontradas a la tabla de símbolos
-
-##### Second Pass (bucle principal): (comienza de nuevo desde el principio del fichero) Mientras haya más líneas que procesar: Obtiene la siguiente instrucción, y la analiza si la instrucción es @ símbolo, si el símbolo no está en la tabla de símbolos, lo añade a la tabla y traduce el símbolo a su valor binario.
-
-##### Si la instrucción es dest =comp ; jump traduce cada uno de los tres campos a su valor binario y ensambla los valores binarios descritos anteriormente en una cadena de dieciséis 0's y 1's escribiendo la cadena en el fichero de salida.
-
-#### Arquitectura del ensamblador:
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/83f1dce3-734d-47c8-b979-92066f2d6adb"/></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
-
-#### Contrucción SymbolTable:
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/5b519b34-166b-4081-b622-aecf3ece8bfb"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f2816b53-1936-4013-8e00-6d902a726a5b"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-#### Construcción Code:
+Devuelve una constante que representa el tipo del comando actual. Si el comando actual es un comando aritmético-lógico, devuelve C_ARITHMETIC.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/83f77ef3-a53a-4b8f-9c1c-8e3930f0f4ff"/></p>
-<p align="center">Fuente: https://drive.google.com/file/d/1uKGRMnL-gqk9DsgeN50z0EpHoSMWe6F5/view</p>
+#### arg1
 
-### COMP:
+Devuelve el primer argumento del comando actual. En el caso de C_ARITHMETIC, se devuelve el propio comando (add,sub,etc.).
+No debe llamarse si el comando actual es C_RETURN.
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/4fc0734a-ac30-4309-9e4a-edec737fff16"/></p>
+#### arg2
+
+Devuelve el segundo argumento del comando actual, sólo debe invocarse si el comando actual es C_PUSH, CPOP, C FUNCTION o C_CALL.
+
+#### Construcción BOOLEANS:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ce669449-e560-4787-a459-0f478949247f"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-### DEST:
+#### Implementación Push/Pop
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/08ffc2db-bb59-45df-a242-e3c6748c3b96"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/9c785eb5-c273-4cbe-926c-174129c1f983"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-### JUMP:
+#### Construcción Análisis/Inicialización:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/5b96279b-abec-4858-a584-0b34f5431d8c"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f6a3fbcc-0a3f-4522-a368-70c89410e42f"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-#### Construcción Parser:
+### First Parse: 
 
-### variableSpot:
-
-<p align="center"><img src="!https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/8d7e63cb-2beb-478e-bc76-d8ec304761d4"/></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-### First pass: 
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/da9496ee-dbe2-4f8b-a385-4bf2e787404f"/></p>
-<p align="center">Fuente: Propiedad de los autores</p>
-
-### Second pass:
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d6d4539e-6875-4774-82e7-1fb67f96da59"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0d4715ee-e0f8-4720-a08a-3d6ca3cd2395"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### strip:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/82c665c4-20b1-4e8d-aaef-b7bfa0a3052c"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/6a51ff53-3a8e-412f-9b99-f5dfbac6d363"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
-### fullFill
+### Parse
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/dd39382a-d018-48f7-9f3a-7175018f838e"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b59dc147-8244-461d-b813-4daa9c95e43f"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### CommandType:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/9eba0e80-0acc-4d8c-99db-26a449b65718"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Arithmetic:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/a3bd2f30-cd3d-44f7-bb69-a2eb267fb555"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### SP,pop stack, push stack and push Pop:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/0de7be3c-98fb-45f4-86f1-186944a89643"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
+
+### Address:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/836e48c4-bae1-41bf-ad52-b7a316f04b42"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
 
 ### Documentos a evaluar:
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/60fe06e9-2104-4dd9-bae3-b3ae31208b6c"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/b744252a-ad92-4af4-abf3-ac6c8ed12a54"/></p>
 <p align="center">Fuente: Propiedad de los autores</p>
-
 
 ## Pruebas de funcionamiento:
 
