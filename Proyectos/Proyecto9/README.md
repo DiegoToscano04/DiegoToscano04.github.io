@@ -43,20 +43,20 @@ https://diegotoscano04.github.io/  </p>
 <p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
 ## Uso del programa JackCompiler
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/831c8911-a1a7-4444-b732-23f1aa21c92a" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d45a89fd-bc46-4aa6-ac26-a1276b790a95" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/bdd10740-561f-406c-9963-b4765df24ac8" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+Se copian los archivos a usar para pasarlos a la carpeta donde está el programa JackCompiler:
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/58ab0457-d3e5-41d6-9c7d-10a3d02ed46c" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/37bb2a75-791c-4cd3-8ec4-e56d0201e0d1" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+Se accede al Simbolo de sistema para ejecutar el JackCompiler y hacer que conveirta los archivos `.jack` a `.VM`.
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ee2341b8-f697-4f52-a9b1-60283d660dd8"/></p>
+<p align="center">Fuente: Propiedad de los autores</p>
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/11ee677d-e27b-4da1-b2aa-6d2e3442331f" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
-
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/27cd3171-ab6b-4e57-9050-d429f5ae0a71" width="500" height="300" /></p>
-<p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
+Posterior a esto se ejecuta el programa VMEmulator para correr los archivos y mostrar el programa elaborado
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/f1e8d34a-e512-446a-902e-e9d3aa365001" width="500" height="300" /></p>
+<p align="center">Fuente: Propiedad de los autores</p>
 
 ### Desarrollo Proyecto 9:
 
@@ -83,7 +83,13 @@ https://diegotoscano04.github.io/  </p>
 #### El Jack OS
 
 Escribir programas Jack requiere trabajar con el sistema operativo Jack, al igual que escribir programas Java requiere trabajar con la biblioteca de clases Java. El SO Jack es un conjunto de librerías que extienden las capacidades del lenguaje básico y cierran las brechas entre éste y el hardware subyacente. Aquí está la API del SO Jack https://www.nand2tetris.org/_files/ugd/44046b_a89c06efcef3491cafb42fb76cc95dc0.pdf, y la lista de códigos de error del SO https://www.nand2tetris.org/_files/ugd/44046b_907fb326cbcb4851b93c21f79d515180.pdf y su significado.
-Suministramos dos implementaciones de Jack OS: "nativo", y "builtin". La implementación nativa del SO fue escrita en Jack y luego traducida (usando un compilador Jack) al conjunto de ocho archivos VM
+Suministramos dos implementaciones de Jack OS: "nativo", y "builtin". La implementación nativa del SO fue escrita en Jack y luego traducida (usando un compilador Jack) al conjunto de ocho archivos VM almacenados en la carpeta nand2tetris/tools/os. La implementación del sistema operativo incorporado se escribió en Java, y está incrustada en el emulador VM disponible en `nand2tetris/tools`.
+
+#### Recursos para la práctica:
+
+- Herramientas `tools/JackCompiler`, para traducir tu programa a un conjunto de archivos .vm, y  `tools/VMEmulator`, para ejecutar y probar el código compilado.
+- La carpeta `projects/09/Square` incluye el código fuente de un programa completo, de 3 clases interactivas. Este programa ilustra varias técnicas de programación que comúnmente son utilizadas en el diseño de aplicaciones que combinan gráficos, animación e interacción con el usuario.
+
 
 #### Operaciones básicas:
 
