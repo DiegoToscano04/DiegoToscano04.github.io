@@ -236,9 +236,9 @@ Funcionamiento del algoritmo:
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad6209f5-5933-4b38-8456-3aff32ea8ec7"/></p>
 <p align="center">Fuente: Propeidad de los autores</p>
 
-###  Viztaso Archivo `Main.vm`
+###  Vistazo Archivo `Main.vm`
 
-<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad6209f5-5933-4b38-8456-3aff32ea8ec7"/></p>
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/34be576b-6696-48ec-8346-fad2383acaa9"/></p>
 <p align="center">Fuente: Propeidad de los autores</p>
 
 ### Funcionamiento Proyecto QuickSort en Jack:
