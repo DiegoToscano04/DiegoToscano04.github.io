@@ -1,4 +1,4 @@
-<p align="center">  Elaboración Proyecto 8 VM II: Program Control </p>
+<p align="center">  Elaboración Proyecto 9: High-Level Language </p>
 
 <h4 align="center">  ARQUITECTURA DE COMPUTADORES A2 </h4>
 
@@ -42,7 +42,7 @@ https://diegotoscano04.github.io/  </p>
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2b988c2c-0dcc-4c83-b0e6-80852b5513cc" width="500" height="300" /></p>
 <p align="center">Fuente: https://docs.google.com/presentation/d/1D7zmC6RfaR2GDG385M1pv80Q3UR4PsdC/edit?pli=1#slide=id.p8</p>
 
-## Uso del programa CPUEmulator
+## Uso del programa JackCompiler
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/831c8911-a1a7-4444-b732-23f1aa21c92a" /></p>
 <p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
 
@@ -58,35 +58,32 @@ https://diegotoscano04.github.io/  </p>
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/27cd3171-ab6b-4e57-9050-d429f5ae0a71" width="500" height="300" /></p>
 <p align="center">Fuente: https://docs.google.com/presentation/d/16DQsZZS9kd50JpK15QKPL8NVqf3Ic912/edit#slide=id.p9</p>
 
-##### En la parte final de cada evaluación podemos corroborar con un mensaje de :`File compilation & comparison succeeded` si realizamos la actividad de manera satisfactoria.
+### Desarrollo Proyecto 9:
 
-### Desarrollo Proyecto 8:
-
-##### Con base en el proyecto 7 el cual consistia en construir un traductor de lenguaje VM a lenguaje de máquina procederemos a extender este traductor para manejar los comandos de bifurcación y función del lenguaje VM. Además, añadirá la capacidad de traducir programas VM multi-archivo. Esto completará el desarrollo del traductor VM que más tarde servirá como backend del compilador.
+##### En este proyecto se implementará un programa en Jack: Un lenguaje de programación simple, similar a Java, basado en objetos.
 
 ## Objetivos Generales
 
-- Extender el traductor VM básico construido en el proyecto 7 en un traductor VM a gran escala, diseñado para manejar programas multi-fichero escritos en el lenguaje VM.
+- El objetivo de este proyecto es familiarizarse con el uso del lenguaje jack.
 
 ------------
 
 ## Objetivos Específicos
 
-- Completar la construcción de un traductor de VM a Hack, conforme a la Especificación VM y al Mapeo VM Estándar en la Plataforma Hack.
-- Utiliza tu traductor para traducir los programas de prueba VM suministrados, obteniendo los programas correspondientes escritos en el lenguaje ensamblador Hack.
-- Cuando ejecutemos en el emulador de CPU suministrado junto con los scripts de prueba, los programas en ensamblador generados por el traductor deben proporcionar los resultados exigidos por los archivos de comparación suministrados.
+- Inventar o asimilar un juego de ordenador sencillo o algún otro programa interactivo, e impleméntelo en el lenguaje Jack. Algunos ejemplos son versiones básicas de Tetris, Snake, Space Invaders, Sokoban, Pong, o juegos más sencillos como el Ahorcado.
 -----------
 
-## Pasos
+## Pasos para crear un programa en Jack.
 
-1. Utilizar el traductor nuestro parcialmente implementado para traducir Xxx.vm. El resultado debería ser un archivo de texto llamado Xxx.asm, que contiene el código ensamblador Hack generado por nuestro traductor.
-2. Inspeccione el código Xxx.asm generado por el traductor. Si hay errores visibles de sintaxis (o cualquier otro) error, depure y corrija su traductor.
-3. Utilizar el script Xxx.tst suministrado para cargar, ejecutar y probar en el emulador de CPU, el programa Xxx.asm creado por el  traductor VM.
+0. Crea una carpeta para tu programa. Llamémosla carpeta del programa.
+1. Escriba su programa Jack - un conjunto de una o más clases Jack - cada una almacenada en un archivo de texto separado `className.jack`. Mantenga todos estos archivos .jack en la misma carpeta de programa.
+2. Compile la carpeta del programa utilizando el compilador Jack suministrado. Esto hará que el compilador compile todas las clases .jack encontradas en la carpeta a los correspondientes archivos .vm, almacenados en la misma carpeta. Si se informa de un error de compilación, depure el programa y vuelva a compilar hasta que no se emita mensajes de error.
+3. En este punto, la carpeta del programa debe contener los archivos .jack de origen, junto con los archivos .vm compilados. Para probar el programa compilado, cargue la carpeta del programa en el emulador VM suministrado. A continuación, ejecute el programa en el emulador VM. Si encuentra errores de ejecución o un comportamiento no deseado del programa, corrija el programa y pase a la etapa 2.
 
-#### Construcción del traductor VM:
+#### El Jack OS
 
-El código VM que genera el compilador está diseñado para operar en una máquina de pila abstracta. El traductor de la máquina virtual traduce este código a máquina, dicho de otro modo: el traductor VM realiza / implementa
-la máquina de pila abstracta en la plataforma host.
+Escribir programas Jack requiere trabajar con el sistema operativo Jack, al igual que escribir programas Java requiere trabajar con la biblioteca de clases Java. El SO Jack es un conjunto de librerías que extienden las capacidades del lenguaje básico y cierran las brechas entre éste y el hardware subyacente. Aquí está la API del SO Jack https://www.nand2tetris.org/_files/ugd/44046b_a89c06efcef3491cafb42fb76cc95dc0.pdf, y la lista de códigos de error del SO https://www.nand2tetris.org/_files/ugd/44046b_907fb326cbcb4851b93c21f79d515180.pdf y su significado.
+Suministramos dos implementaciones de Jack OS: "nativo", y "builtin". La implementación nativa del SO fue escrita en Jack y luego traducida (usando un compilador Jack) al conjunto de ocho archivos VM
 
 #### Operaciones básicas:
 
