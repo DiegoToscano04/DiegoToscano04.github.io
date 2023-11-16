@@ -352,9 +352,10 @@ Scripts de prueba: FibonacciElementVME.tst / Comprueba FibonacciElement.tst y Fi
 Scripts de prueba: StaticsTestVME.tst / Verifica StaticsTest.tst y StaticsTest.cmp.
 
 
+### Pregunta:
+#### ¿Teniendo en cuenta el marco de estas dos prácticas que son las máquinas virtuales. ¿Cuál cree que es el futuro de las máquinas virtuales?
 
-
-
+- Las máquinas virtuales son una tecnología que permite ejecutar diferentes sistemas operativos en la misma máquina física, lo que ofrece una serie de ventajas, como la flexibilidad, la eficiencia y la seguridad. Además, son una herramienta esencial para el aprendizaje, ya que permiten a los estudiantes experimentar con diferentes sistemas operativos y aplicaciones sin riesgo de dañar su sistema operativo principal. Por ejemplo, las máquinas virtuales se utilizan actualmente para desarrollar software, probar aplicaciones y ejecutar sistemas operativos antiguos. En el futuro, las máquinas virtuales podrían utilizarse para ejecutar aplicaciones en la nube o para crear dispositivos del Internet de las cosas.
 
 
 
