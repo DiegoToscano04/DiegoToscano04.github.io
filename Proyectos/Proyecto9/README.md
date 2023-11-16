@@ -202,7 +202,7 @@ Jack es un lenguaje sencillo, Con elementos esenciales de:
 - Sistema de tipos primitivo
 - Tipado débil: para dar al programador el control total, especialmente para escribir el sistema operativo.
 
-##### Diseño propuesto:
+### Diseño propuesto:
 
 ### Pregunta:
 
