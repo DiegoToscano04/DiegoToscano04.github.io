@@ -181,9 +181,34 @@ en la pantalla
 <p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/d6fff043-3a20-4f87-9d8b-ece013dd4959" /></p>
 <p align="center">Fuente: https://drive.google.com/file/d/1CAGF8d3pDIOgqX8NZGzU34PPEzvfTYrk/view</p>
 
+### Ejemplos de aplicaciones simples con jack:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/40717abe-7764-438f-b4f7-616ab009a375" /></p>
+<p align="center">Fuente: https://drive.google.com/file/d/1CAGF8d3pDIOgqX8NZGzU34PPEzvfTYrk/view</p>
+
+### Perspectivas:
+
+Jack es un lenguaje sencillo, Con elementos esenciales de:
+- Programación procedimental
+- Programación Orienta a Objetos
+
+### Limitaciones:
+
+- Pocas estructuras de control
+- Sintaxis peculiar
+- Sin herencia
+
+### Tipos de datos
+- Sistema de tipos primitivo
+- Tipado débil: para dar al programador el control total, especialmente para escribir el sistema operativo.
+
 ##### Diseño propuesto:
 
+### Pregunta:
 
+¿Qué se debe considerar para proponer un nuevo y buen lenguaje de programación, teniendo en cuenta la arquitectura de computador completa? Justifique su respuesta.
+
+- 
 
 
 
