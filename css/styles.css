@@ -178,7 +178,11 @@ p {
 }
 social-logo{
 
+.video{
+text-color:#64a19d
 
+
+}
 }
 abbr[title] {
   -webkit-text-decoration: underline dotted;

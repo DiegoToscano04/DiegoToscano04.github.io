@@ -1,0 +1,78 @@
+class Main {
+   function void main() {
+      var Array test;
+      var int lenght;
+      var int i;
+      let lenght = Keyboard.readInt("Ingrese el tamaño del array: ");
+      let test = Array.new(lenght);
+      let i = 0;
+      while(i < lenght) {
+	let test[i] = Keyboard.readInt("Ingrese un entero: ");
+	let i = i+1;
+      }
+      do Output.printString("Array Original: ");
+      do Output.println();	
+      do Main.printArray(test,lenght);
+      do Output.println();
+      do Output.printString("Array Ordenado: ");
+      do Output.println();	
+      do Main.quickSort(test,0,lenght-1);
+      do Main.printArray(test,lenght);      		
+      return;
+   }
+   
+   function void printArray(Array a, int lenght){
+ 	var int aux,z;  
+	
+	let z = 0;
+	while(z < lenght) {
+          do Output.printInt(a[z]);
+          do Output.printString(" ");
+	  let z = z + 1;
+      }
+      return;		
+   }
+
+    function void quickSort(Array a, int begin, int last){
+	var int auxb,auxl,partitionIndex;
+
+	let auxb = begin;
+	let auxl = last;
+
+	if (auxb < auxl) {
+        let partitionIndex = Main.partition(a, auxb, auxl);
+	
+        do Main.quickSort(a, auxb, partitionIndex-1);
+        do Main.quickSort(a, partitionIndex+1, last);
+    	}
+	return;
+      }
+
+   function int partition(Array a, int begin, int last){
+	var int auxb, auxl, pivot,i,j,temp;
+
+	let auxb = begin;
+	let auxl = last;
+
+	let pivot = a[auxl];
+	let i = begin - 1;
+	let j = begin;
+	while(j<auxl){
+	   if((a[j] < pivot) | (a[j] = pivot)){
+		let i = i+1;
+   		let temp = a[i];
+		let a[i] = a[j];
+		let a[j] = temp;
+		}
+	   let j = j + 1;	
+  	    }
+
+	let temp = a[i+1];
+	let a[i+1] = a[auxl];
+	let a[auxl] = temp;
+ 	return i+1;
+	}  
+
+  
+}
+
