@@ -12,7 +12,7 @@ https://diegotoscano04.github.io/  </p>
 # Aprendizaje herramienta The Nand to Tetris
 
 ## Software:
-###### El paquete de software Nand to Tetris contiene todas las herramientas y archivos necesarios para completar todos los proyectos descritos en este sitio y en el libro "The Elements of Computing Systems".
+###### El paquete de software Nand to Tetris contiene todas las herramientas y archivos necesarios para completar todos los proyectos descritos en este sitio y en el libro "The Elements of Computing Systems."
 
 ## Descarga:
 ###### Se descarga el programa Nand2Tetris de la página web: https://www.nand2tetris.org/software
