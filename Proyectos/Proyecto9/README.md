@@ -204,11 +204,68 @@ Jack es un lenguaje sencillo, Con elementos esenciales de:
 
 ### Diseño propuesto:
 
+#### QuickSort:
+
+Funcionamiento del algoritmo:
+
+- Elegir un elemento del conjunto de elementos a ordenar, al que llamaremos pivote.
+- Resituar los demás elementos de la lista a cada lado del pivote, de manera que a un lado queden todos los menores que él, y al otro los mayores. Los elementos iguales al pivote pueden ser colocados tanto a su derecha como a su izquierda, dependiendo de la implementación deseada. En este momento, el pivote ocupa exactamente el lugar que le corresponderá en la lista ordenada.
+- La lista queda separada en dos sublistas, una formada por los elementos a la izquierda del pivote, y otra por los elementos a su derecha.
+- Repetir este proceso de forma recursiva para cada sublista mientras éstas contengan más de un elemento. Una vez terminado este proceso todos los elementos estarán ordenados.
+
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/490e0a8c-d639-4ac6-8a0d-582169f8bd39" /></p>
+<p align="center">Fuente: https://es.wikipedia.org/wiki/Quicksort</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/444f6d06-7752-4dcb-98ed-839f8cdb3a7b" /></p>
+<p align="center">Fuente: https://es.wikipedia.org/wiki/Quicksort</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/be4ee2bc-f964-4a59-81de-253902cac65b" /></p>
+<p align="center">Fuente: https://es.wikipedia.org/wiki/Quicksort</p>
+
+### Visualización archivo `Main.jack`:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2f0d2bcc-384b-4d78-a9b4-d792f352e375"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/eb2c6337-1a7a-4e0c-b5b4-3f6654af8c52"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+### Obtención de Archivo `Main.vm`
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/ad6209f5-5933-4b38-8456-3aff32ea8ec7"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+###  Vistazo Archivo `Main.vm`
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/34be576b-6696-48ec-8346-fad2383acaa9"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+### Funcionamiento Proyecto QuickSort en Jack:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/61f6834f-75cb-4db0-bace-93646b44a8b9"  width="700" height="500"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+
+### Demostración con el ordenamiento de un Array:
+
+<p align="center"><img src="https://github.com/DiegoToscano04/DiegoToscano04.github.io/assets/129452906/2a86655e-a56d-48c1-b820-5b2d663a224d"/></p>
+<p align="center">Fuente: Propeidad de los autores</p>
+
+
 ### Pregunta:
 
 ¿Qué se debe considerar para proponer un nuevo y buen lenguaje de programación, teniendo en cuenta la arquitectura de computador completa? Justifique su respuesta.
 
-- 
+Un nuevo y buen lenguaje de programación, considerando la arquitectura de computador completa, tiene varios aspectos clave a tener en cuenta:
+
+• Abstracción y portabilidad: El nuevo lenguaje debe ofrecer abstracciones que permitan a los programadores escribir código independientemente de la arquitectura subyacente. Esto implica un alto nivel de portabilidad para que el código pueda ejecutarse eficientemente en diferentes plataformas y sistemas.
+• Eficiencia y optimización: El lenguaje debe permitir la optimización del código para aprovechar al máximo los recursos del hardware, incluyendo la capacidad de realizar operaciones de bajo nivel cuando sea necesario para maximizar el rendimiento.
+• Seguridad y fiabilidad: Debe proporcionar herramientas y características que minimicen errores, como la gestión automática de la memoria para prevenir fugas o errores de acceso, y la detección de errores en tiempo de compilación o ejecución.
+• Soporte para paradigmas modernos: El nuevo lenguaje debe ser capaz de adaptarse a los paradigmas de programación modernos, como la programación concurrente, funcional o orientada a objetos, brindando soporte adecuado para facilitar el desarrollo de aplicaciones complejas.
+• Facilidad de aprendizaje y legibilidad: Debe tener una sintaxis clara y coherente que facilite su aprendizaje y comprensión, permitiendo a los programadores expresar sus ideas de manera eficiente y legible. 
+
+La propuesta de un nuevo y buen lenguaje de programación que considere la arquitectura de computador completa debe equilibrar la abstracción de detalles de bajo nivel con la capacidad de optimización, portabilidad, seguridad, soporte a paradigmas modernos y facilidad de uso para los programadores. Su diseño debe ser cuidadoso y considerado, abordando las necesidades de desarrollo de software en la actualidad y en el futuro, manteniendo un equilibrio entre la simplicidad y la potencia.
 
 
 
